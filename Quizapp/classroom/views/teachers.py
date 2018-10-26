@@ -12,7 +12,7 @@ from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
 
 from ..decorators import teacher_required
 from ..forms import BaseAnswerInlineFormSet, QuestionForm, TeacherSignUpForm
-from ..models import Answer, Question, Quiz, User
+from ..models import Answer, Question, Quiz, RecruiterDetails, Job,  User
 
 
 class TeacherSignUpView(CreateView):
@@ -45,19 +45,19 @@ class QuizListView(ListView):
         return queryset
 
 
-@method_decorator([login_required, teacher_required], name='dispatch')
-class QuizCreateView(CreateView):
-    model = Quiz
-    fields = ('name', 'subject', 'password')
-    template_name = 'classroom/teachers/quiz_add_form.html'
-
-    def form_valid(self, form):
-        quiz = form.save(commit=False)
-        quiz.owner = self.request.user
-
-        quiz.save()
-        messages.success(self.request, 'The quiz was created with success! Go ahead and add some questions now.')
-        return redirect('teachers:quiz_change', quiz.pk)
+# @method_decorator([login_required, teacher_required], name='dispatch')
+# class QuizCreateView(CreateView):
+#     model = Quiz
+#     fields = ('name', 'subject', 'password')
+#     template_name = 'classroom/teachers/quiz_add_form.html'
+#
+#     def form_valid(self, form):
+#         quiz = form.save(commit=False)
+#         quiz.owner = self.request.user
+#
+#         quiz.save()
+#         messages.success(self.request, 'The quiz was created with success! Go ahead and add some questions now.')
+#         return redirect('teachers:quiz_change', quiz.pk)
 
 
 @method_decorator([login_required, teacher_required], name='dispatch')
@@ -212,3 +212,31 @@ class QuestionDeleteView(DeleteView):
     def get_success_url(self):
         question = self.get_object()
         return reverse('teachers:quiz_change', kwargs={'pk': question.quiz_id})
+
+@method_decorator([login_required, teacher_required], name='dispatch')
+class PersonalDetailsView(CreateView):
+    model = RecruiterDetails
+    fields = ('first_name','last_name','email','mobile')
+    template_name = 'classroom/teachers/quiz_add_form.html'
+
+    def form_valid(self, form):
+        personal_details = form.save(commit=False)
+        personal_details.owner = self.request.user
+
+        personal_details.save()
+        messages.success(self.request, 'The quiz was created with success! Go ahead and add some questions now.')
+        return redirect('teachers:quiz_change', personal_details.pk)
+#
+# @method_decorator([login_required, teacher_required], name='dispatch')
+# class OrganizationDetailsView(CreateView):
+#     model = RecruiterDetails
+#     fields = ('orgaization_name','organization_email','organization_description','organzation_logo')
+#     template_name = 'classroom/teachers/quiz_add_form_organization.html'
+#
+#     def form_valid(self, form):
+#         organization_details = form.save(commit=False)
+#         organization_details.owner = self.request.user
+#
+#         organization_details.save()
+#         messages.success(self.request, 'The quiz was created with success! Go ahead and add some questions now.')
+#         return redirect('teachers:quiz_change', organization_details.pk)
