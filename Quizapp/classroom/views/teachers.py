@@ -217,26 +217,41 @@ class QuestionDeleteView(DeleteView):
 class PersonalDetailsView(CreateView):
     model = RecruiterDetails
     fields = ('first_name','last_name','email','mobile')
-    template_name = 'classroom/teachers/quiz_add_form.html'
+    template_name = 'classroom/teachers/personal_detail_form.html'
 
     def form_valid(self, form):
         personal_details = form.save(commit=False)
         personal_details.owner = self.request.user
 
         personal_details.save()
-        messages.success(self.request, 'The quiz was created with success! Go ahead and add some questions now.')
+        messages.success(self.request, 'Added Personal Details Successfully.')
         return redirect('teachers:quiz_change', personal_details.pk)
-#
-# @method_decorator([login_required, teacher_required], name='dispatch')
-# class OrganizationDetailsView(CreateView):
-#     model = RecruiterDetails
-#     fields = ('orgaization_name','organization_email','organization_description','organzation_logo')
-#     template_name = 'classroom/teachers/quiz_add_form_organization.html'
-#
-#     def form_valid(self, form):
-#         organization_details = form.save(commit=False)
-#         organization_details.owner = self.request.user
-#
-#         organization_details.save()
-#         messages.success(self.request, 'The quiz was created with success! Go ahead and add some questions now.')
-#         return redirect('teachers:quiz_change', organization_details.pk)
+
+@method_decorator([login_required, teacher_required], name='dispatch')
+class OrganizationDetailsView(CreateView):
+    model = RecruiterDetails
+    fields = ('organization_name','organization_email','organization_description')
+    template_name = 'classroom/teachers/organization_detail_form.html'
+
+    def form_valid(self, form):
+        organization_details = form.save(commit=False)
+        organization_details.owner = self.request.user
+
+        organization_details.save()
+        messages.success(self.request, 'Added Organizational Details Successfully. ')
+        return redirect('teachers:quiz_change', organization_details.pk)
+
+@method_decorator([login_required, teacher_required], name='dispatch')
+class PostJobView(CreateView):
+    model = Job
+    fields = ('offer','primary_profile','location','no_of_position','apply_deadline','drive_date','organization_sector','job_description','package',
+                'required_skills','min_CPI','selection_process','other_details')
+    template_name = 'classroom/teachers/post_job_form.html'
+
+    def form_valid(self, form):
+        job = form.save(commit=False)
+        job.owner = self.request.user
+
+        job.save()
+        messages.success(self.request, 'Added Job Successfully.')
+        return redirect('teachers:quiz_change', job.pk)
