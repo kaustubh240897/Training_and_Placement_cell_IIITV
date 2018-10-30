@@ -3,20 +3,24 @@
 {% block content %}
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item active" aria-current="page">My Quizzes</li>
+      <li class="breadcrumb-item active" aria-current="page">Recruiter Profile</li>
     </ol>
   </nav>
-  <h2 class="mb-3">My Quizzes</h2>
-  <a href="{% url 'teachers:quiz_add' %}" class="btn btn-primary mb-3" role="button">Add quiz</a>
+  <!-- <h2 class="mb-3">My Quizzes</h2> -->
+  <a href="{% url 'teachers:add_personal' %}" class="btn btn-primary mb-3" role="button">Personal Details</a>
+  <a href="{% url 'teachers:add_organization' %}" class="btn btn-primary mb-3" role="button">Organizational Details</a>
+  <a href="{% url 'teachers:post_job' %}" class="btn btn-primary mb-3" role="button">Post Job</a>
   <div class="card">
-    <table class="table mb-0">
+    <!-- <table class="table mb-0">
       <thead>
         <tr>
-          <th>Quiz</th>
-          <th>Subject</th>
-          <th>Questions</th>
-          <th>Taken</th>
-          <th></th>
+          <th>Date</thn>
+          <th>Profile</th>
+          <th>Status</th>
+          <th>Application</th>
+          <th>Application Deadline</th>
+          <th>Number of Position</th>
+          <th>Package</th>
         </tr>
       </thead>
       <tbody>
@@ -36,6 +40,6 @@
           </tr>
         {% endfor %}
       </tbody>
-    </table>
+    </table> -->
   </div>
 {% endblock %}

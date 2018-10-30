@@ -1,0 +1,361 @@
+body{
+  width: 100%;
+  height: 100%;
+}
+hr{
+  width: 100%;
+  margin-top: 6%;
+  border:1px solid grey;
+}
+.container{
+    margin-top: 6%;
+}
+.Placement{
+    position: relative;
+    background:url('image/2.jpg');
+    background-size: 50% 100%;
+    height: 100vh;
+    width: 100%;
+    /*overflow-x: hidden;*/
+}
+
+.LowerDiv{
+    position:absolute;
+    width: 100%;
+    height:100%;
+    top: 0px;
+    left: 0px;
+    background:transparent;
+}
+
+.IIITLogo{
+    /* position: absolute; */
+    width: 90px;
+    height: 90px;
+    padding: 15px;
+    margin-left: 1%;
+}
+
+.Header{
+    width: 50%;
+    height: 15vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: white;
+    text-align: left;
+}
+
+
+.Title{
+    /* margin-top: 1%; */
+    margin-left: 15%;
+    padding: 2%;
+    line-height: 0.4;
+    position: absolute;
+    top: 0;
+}
+
+.Title h6{
+  width: 400px;
+}
+
+.Title h3{
+    /* margin-top: 2%; */
+    font-weight: bold;
+    line-height: 0.6;
+}
+.UpperDiv{
+    position:absolute;
+    left: 0%;
+    top: 0;
+    width: 100%;
+    padding: 3vmin;
+    height: 100vh;
+    background-size: 100% 100%;
+    /*transform: skewX(-25deg);*/
+    background: #012440;
+    box-sizing: border-box;
+    text-align: right;
+    z-index: 4;
+    clip-path: polygon(50% 0,100% 0,100% 100%,25% 100%);
+}
+
+.Nav{
+    font-size:20px ;
+    position: absolute;
+    top: 0px;
+    right: 25%;
+    width: 100%;
+    height: 12vh;
+    background:red;
+    /* border-bottom: 2px solid grey; */
+    margin: 0 3vw;
+    box-sizing: border-box;
+}
+
+.Nav ul{
+    position: absolute;
+    width: 100%;
+    background:green;
+    top: 40%;
+    left:80%;
+    padding: 2%;
+    /*transform: skewX(25deg);*/
+
+}
+.navbar-toggle{
+    position: relative;
+    float: right;
+    padding: 9px 10px;
+    margin-top:39px;
+    margin-right: 15px;
+    margin-bottom:8px;
+    color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.navbar-alignit .navbar-header {
+    -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  height: 50px;
+}
+
+.ListItems{
+    font-size: 2vmin;
+    display: inline-block;
+    list-style-type: none;
+    padding: 0px 1vmin;
+    color: white;
+}
+/*.active{
+    color: white;
+}*/
+
+.Details{
+    position:absolute;
+    top: 20%;
+    color: white;
+    font-size: 2.5vmin;
+    /*transform: skewX(25deg);*/
+    width: 45%;
+    left: 50%;
+    text-align: left;
+    margin: 3vmin;
+}
+.Details p{
+    margin: 16px 0;
+}
+
+.RecruitButton{
+    outline: none;
+    background: lightseagreen;
+    color: white;
+    border: none;
+    padding: 1vmin 3vmin;
+    border-radius: 3px ;
+    margin: 1vmin 1vmin;
+}
+
+.StudentButton{
+    outline: none;
+    border: none;
+    background: transparent;
+    color: white;
+    border: 2px solid lightseagreen;
+    border-radius: 3px;
+    padding: 1vmin 3vmin;
+    margin: 1vmin 1vmin;
+}
+
+.Buttons{
+    position: relative;
+    width: 100%;
+}
+
+
+
+                                                                                         /*About TNP Cell*/
+.row-padding{
+    margin: 10px 230px;
+}
+.col-md-4{
+  float: left;
+  width: 33.333%;
+  padding: 0 4px;
+}
+.row-padding::after{
+  content: "";
+  display:table;
+  clear: both;
+}
+@media screen and (max-width: 600px) {
+  .col-md-4 {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+.card_column {
+  /*box-shadow: 0 4px 8px 3px rgba(0, 0, 0, 0.3);*/
+  padding: 16px;
+  /*height: 270px;
+  width: 270px;*/
+  text-align: left;
+  background-color: white;
+  /*margin: 8px;*/
+}
+.paragraph{
+    float: left;
+    font-size: 18px;
+
+}
+
+.card{
+  box-shadow: 0 4px 8px 3px rgba(0, 0, 0, 0.3);
+  height: 290px;
+  padding: 16px;
+  text-align: left;
+}
+.card h3{
+    font-weight: 600;
+}
+.card h4{
+    font-weight: 600;
+}
+.card h6{
+    font-size: 15px;
+    text-align:
+}
+
+                                                                           /*Director's Message*/
+.fa-quote-left{
+    float: left;
+    font-size: 50px;
+    color:grey;
+    margin-right:10px;
+}
+.fa-quote-right{
+    font-size: 50px;
+    float: right;
+    color:grey;
+}
+.para-container{
+    float: left;
+    font-size: 18px;
+}
+.heading3{
+    font-size: 18px;
+    font-weight: 800;
+    /*letter-spacing: 1px;*/
+}
+.card_para{
+    height: 270px;
+    /*padding: 20px;*/
+    margin-left:53px;
+}
+                                                                              /* What company says About Us */
+    /* .bs-example{
+    	margin: 200px 150px 0;
+      padding: 5%;
+    }
+    .popover-title .close{
+        position: relative;
+        bottom: 3px;
+    } */
+
+
+  .showme{
+  display: none;
+  }
+  .showhim:hover .showme{
+  display : block;
+  }
+  .showhim:hover .ok{
+  display : none;
+  }
+
+
+
+
+                                                                             /*INDUSTRY PARTNERS*/
+
+.padding {
+    padding: 80px 0;
+    padding-bottom: 2rem;
+}
+.tooltip-image {
+    width: : 200px;
+    height: 200px;
+    z-index: 500;
+}
+.container h1{
+    font-weight: 600;
+}
+.container hr{
+    float: left;
+    border-top: 4px solid skyblue;
+    width: 6%;
+    margin-top: .3rem;
+    margin-bottom: 1rem;
+}
+.image-responsive{
+    height: 200px;
+    width: 300px;
+}
+.image21{
+    height: 200px;
+    width: 200px;
+}
+/*What Company Say About Us*/
+
+.card1 {
+	/* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6); */
+	width: 100px;
+	height: 100px;
+	padding-right:30%;
+	font-size: 16px;
+	font-family: sans-serif;
+	float: left;
+	margin-left:60%;
+  margin-top: 10%;
+}
+
+
+
+                                                                                    /*Footer*/
+footer{
+    width: 100%;
+    background-color: #3f3f3f;
+    padding: 2% 2% 3% 2%;
+    color: #fff;
+
+}
+.spn{
+    color: white;
+    font-size:3vmin;
+    margin-top: 10px;
+}
+.h4{
+    font-weight: 600;
+    font-size: 3vmin;
+}
+.f-para{
+    font-size:3vmin;
+}
+.foot-img{
+    height: 120px;
+    width: 120px;
+    margin: 20px 100px;
+    border-radius: 50%;
+}
+
+
+/* Media queries */
+@media (max-width: 900px) {
+  .navbar-collapse{
+    display: none !important;
+  }
+}
