@@ -93,7 +93,7 @@ class RecruiterDetails(models.Model):
     first_name = models.CharField(max_length= 255)
     last_name = models.CharField(max_length= 255)
     email = models.EmailField(max_length= 70,blank= True, null=True, unique= True)
-    mobile = models.IntegerField(max_length= 10)
+    mobile = models.IntegerField()
     organization_name = models.CharField(max_length= 255, blank= True, unique= True)
     organization_email = models.EmailField(max_length= 70, blank= True, null=True, unique= True)
     organization_description = models.CharField(max_length= 255)
@@ -145,4 +145,4 @@ class Education(models.Model):
     postgrad_percentage = models.DecimalField(decimal_places=2,max_digits=4)
 
     def __str__(self):
-        return (self.graduation_year + " " + self.graduation_institute + " " + self.graduation_percentage)
+        return (str(self.graduation_year) + " " + self.graduation_institute + " " + str(self.graduation_percentage))
