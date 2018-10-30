@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+    <form class="" action="index.html" method="Post">
+      {% csrf_token %}
+      {{ form|crispy }}
+      <h2>graduation</h2>
+      year of completion:
+      <input type="text" name="year of completion" value=""><br>
+      Institute:
+      <input type="text" name="institute" value=""><br>
+      percentage/cgpa:
+      <input type="text" name="cgpa" value=""><br>
+
+      <h2>X</h2>
+      year of completion:
+      <input type="text" name="year of completion" value=""><br>
+      Institute:
+      <input type="text" name="institute" value=""><br>
+      percentage/cgpa:
+      <input type="text" name="cgpa" value=""><br>
+
+      <h2>XII</h2>
+      year of completion:
+      <input type="text" name="year of completion" value=""><br>
+      Institute:
+      <input type="text" name="institute" value=""><br>
+      percentage/cgpa:
+      <input type="text" name="cgpa" value=""><br>
+
+      <h2>Post-graduation</h2>
+      year of completion:
+      <input type="text" name="year of completion" value=""><br>
+      Institute:
+      <input type="text" name="institute" value=""><br>
+      percentage/cgpa:
+      <input type="text" name="cgpa" value=""><br>
+      <input type="submit" value="submit">
+    </form>
+  {% endblock %}

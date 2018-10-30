@@ -11,7 +11,7 @@ from django.views.generic import CreateView, ListView, UpdateView
 
 from ..decorators import student_required
 from ..forms import StudentInterestsForm, StudentSignUpForm, TakeQuizForm
-from ..models import Quiz, Student, TakenQuiz, User
+from ..models import Quiz, Student, TakenQuiz, User, Resume, Education
 
 
 class StudentSignUpView(CreateView):
@@ -131,3 +131,17 @@ def take_quiz(request, pk):
             'form': form,
             'progress': progress
         })
+
+@method_decorator([login_required, student_required], name='dispatch')
+class resume_education(ListView):
+    model = Education
+    template_name = 'classroom/students/education.html'
+    fields = ('graduation_year', 'graduation_institute', 'graduation_percentage', 'X_year','X_institute', 'X_percentage', 'XII_year', 'XII_institute', 'XII_percentage')
+
+    def form_valid(self, form):
+        education_details     = form.save(commit=False)
+        education_details.owner = self.request.user
+
+        education_details.save()
+        messages.success(self.request, 'success!')
+        return redirect('teachers:quiz_change', education_details.pk)
