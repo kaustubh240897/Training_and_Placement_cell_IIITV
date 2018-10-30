@@ -119,4 +119,30 @@ class Job(models.Model):
     other_details = models.CharField(max_length= 255)
 
     def __str__(self):
-        return (str(self.offer) + " " + self.primary_profile + " " + self.location + " " + str(self.no_of_position) + " " + str(self.apply_deadline) + " " + str(self.drive_date) + " " + self.organization_sector + " " + self.job_description + " " + str(self.package) + " " + self.required_skills + " " + str(self.min_CPI) + " " + str(self.selection_process) + " " + self.other_details)
+        #return (str(self.offer) + " " + self.primary_profile + " " + self.location + " " + str(self.no_of_position) + " " + str(self.apply_deadline) + " " + str(self.drive_date) + " " + self.organization_sector + " " + self.job_description + " " + str(self.package) + " " + self.required_skills + " " + str(self.min_CPI) + " " + str(self.selection_process) + " " + self.other_details)
+        return (self.primary_profile + " " + self.location + " " + self.no_of_position + " " + self.apply_deadline + " " + self.organization_sector
+                + " " + self.job_description + " " + self.package + " " + self.required_skills)
+
+class Resume(models.Model):
+    resume_field = models.CharField(max_length=256)
+
+    def __str__(self):
+        return self.resume_field
+
+class Education(models.Model):
+    resume_field = models.ForeignKey(Resume, on_delete=models.CASCADE)
+    graduation_year = models.IntegerField()
+    graduation_institute = models.CharField(max_length=256)
+    graduation_percentage = models.DecimalField(decimal_places=2,max_digits=4)
+    X_year = models.IntegerField()
+    X_institute = models.CharField(max_length=256)
+    X_percentage = models.DecimalField(decimal_places=2,max_digits=4)
+    XII_year = models.IntegerField()
+    XII_institute = models.CharField(max_length=256)
+    XII_percentage = models.DecimalField(decimal_places=2,max_digits=4)
+    postgrad_year = models.IntegerField()
+    postgrad_institute = models.CharField(max_length=256)
+    postgrad_percentage = models.DecimalField(decimal_places=2,max_digits=4)
+
+    def __str__(self):
+        return (self.graduation_year + " " + self.graduation_institute + " " + self.graduation_percentage)
