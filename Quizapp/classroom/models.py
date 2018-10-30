@@ -2,6 +2,7 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.utils.html import escape, mark_safe
 from django.contrib.auth.models import User
+import datetime
 
 
 class User(AbstractUser):
@@ -76,35 +77,46 @@ class TakenQuiz(models.Model):
 class StudentAnswer(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name='quiz_answers')
     answer = models.ForeignKey(Answer, on_delete=models.CASCADE, related_name='+')
-
+OFFER = (
+    (1, ('Job')),
+    (2, ('Internship')),
+    (3, ('Job + Internship'))
+)
+SELECTION_PROCESS = (
+    (1, ('Shortlisting from Resumes')),
+    (2, ('Written Test - Aptitude')),
+    (3, ('Group Discussion')),
+    (4, ('Personal Interview (Technical + HR)')),
+    (5, ('Written Test - Technical')),
+)
 class RecruiterDetails(models.Model):
     first_name = models.CharField(max_length= 255)
     last_name = models.CharField(max_length= 255)
     email = models.EmailField(max_length= 70,blank= True, null=True, unique= True)
-    mobile = models.CharField(max_length= 10)
+    mobile = models.IntegerField(max_length= 10)
     organization_name = models.CharField(max_length= 255, blank= True, unique= True)
     organization_email = models.EmailField(max_length= 70, blank= True, null=True, unique= True)
     organization_description = models.CharField(max_length= 255)
-    organization_logo = models.ImageField(upload_to='organization_logo', blank=True)
+    # organization_logo = models.ImageField(upload_to='organization_logo', blank=True)
 
     def __str__(self):
-        return self.first_name + "  " + self.last_name
+        return (self.first_name + "  " + self.last_name + "  " + str(self.email) + "  " + str(self.mobile) + "  " + self.organization_name + "  " + str(self.organization_email)
+                + "  " + self.organization_description)
 
 class Job(models.Model):
-    offer = models.CharField(max_length= 255)
+    offer = models.IntegerField(choices=OFFER, default=1)
     primary_profile = models.CharField(max_length= 255)
     location = models.CharField(max_length= 255)
     no_of_position = models.IntegerField()
-    apply_deadline = models.CharField(max_length= 10)
-    drive_date = models.CharField(max_length= 10)
+    apply_deadline = models.DateField(default=datetime.date.today)
+    drive_date = models.DateField(default=datetime.date.today)
     organization_sector = models.CharField(max_length= 255)
-    job_decription = models.CharField(max_length= 255)
-    package = models.IntegerField()
+    job_description = models.CharField(max_length= 255)
+    package = models.DecimalField(decimal_places=1,max_digits=2)
     required_skills = models.CharField(max_length= 255)
     min_CPI = models.DecimalField(decimal_places=2,max_digits=4)
-    selection_process = models.CharField(max_length= 255)
+    selection_process = models.IntegerField(choices=SELECTION_PROCESS, default=1)
     other_details = models.CharField(max_length= 255)
 
     def __str__(self):
-        return (self.primary_profile + " " + self.location + " " + self.no_of_position + " " + self.apply_deadline + " " + self.organization_sector
-                + " " + self.job_decription + " " + self.package + " " + self.required_skills)
+        return (str(self.offer) + " " + self.primary_profile + " " + self.location + " " + str(self.no_of_position) + " " + str(self.apply_deadline) + " " + str(self.drive_date) + " " + self.organization_sector + " " + self.job_description + " " + str(self.package) + " " + self.required_skills + " " + str(self.min_CPI) + " " + str(self.selection_process) + " " + self.other_details)
