@@ -12,7 +12,7 @@ from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
 
 from ..decorators import teacher_required
 from ..forms import BaseAnswerInlineFormSet, QuestionForm, TeacherSignUpForm
-from ..models import Answer, Question, Quiz, RecruiterDetails, Job,  User
+from ..models import Answer, Question, Quiz, PersonalDetails, OrganizationalDetails, Job,  User
 
 
 class TeacherSignUpView(CreateView):
@@ -215,7 +215,7 @@ class QuestionDeleteView(DeleteView):
 
 @method_decorator([login_required, teacher_required], name='dispatch')
 class PersonalDetailsView(CreateView):
-    model = RecruiterDetails
+    model = PersonalDetails
     fields = ('first_name','last_name','email','mobile')
     template_name = 'classroom/teachers/personal_detail_form.html'
 
@@ -229,7 +229,7 @@ class PersonalDetailsView(CreateView):
 
 @method_decorator([login_required, teacher_required], name='dispatch')
 class OrganizationDetailsView(CreateView):
-    model = RecruiterDetails
+    model = OrganizationalDetails
     fields = ('organization_name','organization_email','organization_description')
     template_name = 'classroom/teachers/organization_detail_form.html'
 
@@ -255,3 +255,17 @@ class PostJobView(CreateView):
         job.save()
         messages.success(self.request, 'Added Job Successfully.')
         return redirect('teachers:quiz_change', job.pk)
+
+# @method_decorator([login_required, teacher_required], name='dispatch')
+# class JobListView(ListView):
+#     model = Job
+#     ordering = ('name',)
+#     context_object_name = 'jobs'
+#     template_name = 'classroom/teachers/quiz_change_list.html'
+
+#      def get_queryset(self):
+#          queryset = self.request.user.jobs \
+#              .select_related('subject') \
+#              .annotate(questions_count=Count('questions', distinct=True)) \
+#              .annotate(taken_count=Count('taken_quizzes', distinct=True))
+#          return queryset
