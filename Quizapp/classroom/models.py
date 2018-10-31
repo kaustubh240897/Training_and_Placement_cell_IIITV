@@ -88,6 +88,7 @@ SELECTION_PROCESS = (
     (4, ('Personal Interview (Technical + HR)')),
     (5, ('Written Test - Technical')),
 )
+
 # class RecruiterDetails(models.Model):
 #     first_name = models.CharField(max_length= 255)
 #     last_name = models.CharField(max_length= 255)
@@ -139,5 +140,5 @@ class Job(models.Model):
     other_details = models.CharField(max_length= 255)
 
     def __str__(self):
-        return (str(self.offer) + " " + self.primary_profile + " " + self.location + " " + str(self.no_of_position) + " " + str(self.apply_deadline) + " " + str(self.drive_date) + " " + self.organization_sector + " " + self.job_description + " " + str(self.package) + " " + self.required_skills + " " + str(self.min_CPI) + " " + str(self.selection_process) + " " + self.other_details)
-
+        return (str(self.offer) + " " + self.primary_profile + " " + self.location + " " + str(self.no_of_position) + " " + str(self.apply_deadline) + " " + str(self.drive_date) + " " + self.organization_sector + " " + 
+                self.job_description + " " + str(self.package) + " " + self.required_skills + " " + str(self.min_CPI) + " " + str(self.selection_process) + " " + self.other_details)

@@ -3,11 +3,62 @@
   <component name="ChangeListManager">
     <list default="true" id="cf160cda-64f0-41be-9478-0824a77a292c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quizapp/classroom/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Quizapp/classroom/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quizapp/classroom/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Quizapp/classroom/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Quizapp/classroom/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Quizapp/classroom/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quizapp/classroom/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Quizapp/classroom/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quizapp/classroom/views/teachers.py" beforeDir="false" afterPath="$PROJECT_DIR$/Quizapp/classroom/views/teachers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Quizapp/classroom/templates/classroom/students/education.html" beforeDir="false" afterPath="$PROJECT_DIR$/Quizapp/classroom/templates/classroom/students/education.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Quizapp/classroom/views/students.py" beforeDir="false" afterPath="$PROJECT_DIR$/Quizapp/classroom/views/students.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/SE_home.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/SE_home.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/WHY_we.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/WHY_we.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/image/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/image/DBMSLogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/image/GOG.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/image/Gsoc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/image/Kotak-Life.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/image/State Bank of India.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/image/aaron-burden-147840-unsplash.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/image/algo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/image/artificial-intelligence.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/image/bady-qb-42758-unsplash.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/image/book.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/image/cerebro.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/image/clg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/image/clg2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/image/cn.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/image/codechef.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/image/coder.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/image/davide-cantelli-153517-unsplash.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/image/ds.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/image/fertilizer.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/image/germi.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/image/hackerrank.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/image/human_resourses.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/image/inaki-del-olmo-602632-unsplash.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/image/information-retrieval.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/image/java.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/image/kreiva2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/image/logo-iiitv.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/image/ml.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/image/sea.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/image/study.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/image/tcs.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/image/techforindia.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/image/tom-grimbert-642886-unsplash.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/image/ventura1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/login-final.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/login-final.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/login-final.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/popover with img.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/recruiter-login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/recruiter-login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/stEducation.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/stWorksample.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/student-register.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/student-register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/studentEducation.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/studentSkill.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/studentSkills.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/studentWorkSamples.html" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,55 +79,120 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="697" />
+          <entry key="HTML" value="10" />
+          <entry key="Python" value="762" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
       <usages-collector id="statistics.js.language.service.starts" />
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="697" />
+          <entry key="html" value="10" />
+          <entry key="py" value="762" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="3" />
-          <entry key="Python" value="8" />
+          <entry key="HTML" value="10" />
+          <entry key="Python" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="3" />
-          <entry key="py" value="8" />
+          <entry key="html" value="10" />
+          <entry key="py" value="16" />
         </counts>
       </usages-collector>
     </session>
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Quizapplication" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Quizapp/classroom/admin.py">
+        <entry file="file://$PROJECT_DIR$/Quizapp/classroom/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+            <state relative-caret-position="290">
+              <caret line="147" column="87" selection-start-line="147" selection-start-column="87" selection-end-line="147" selection-end-column="87" />
               <folding>
-                <element signature="e#0#110#0" expanded="true" />
+                <element signature="e#0#51#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Quizapp/classroom/models.py">
+        <entry file="file://$PROJECT_DIR$/Quizapp/classroom/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="91" />
+            <state relative-caret-position="253">
+              <caret line="90" column="25" selection-start-line="90" selection-start-column="6" selection-end-line="90" selection-end-column="25" />
               <folding>
-                <element signature="e#0#51#0" expanded="true" />
-                <marker date="1540535465551" expanded="true" signature="3396:3405" ph="..." />
+                <element signature="e#0#24#0" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Quizapp/classroom/views/students.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="83">
+              <caret line="135" column="33" selection-start-line="135" selection-start-column="33" selection-end-line="135" selection-end-column="33" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Quizapp/classroom/templates/classroom/students/education.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Quizapp/classroom/admin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+              <folding>
+                <element signature="e#0#129#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Quizapp/classroom/views/teachers.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="226" column="78" lean-forward="true" selection-start-line="226" selection-start-column="78" selection-end-line="226" selection-end-column="78" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Quizapp/classroom/templates/classroom/teachers/personal_detail_form.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="37" lean-forward="true" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Quizapp/classroom/templates/classroom/students/_header.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Quizapp/templates/registration/signup_form.html">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -85,73 +201,6 @@
             <state>
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Quizapp/classroom/templates/classroom/students/quiz_list.html">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Quizapp/classroom/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="78" column="29" lean-forward="true" selection-start-line="78" selection-start-column="29" selection-end-line="78" selection-end-column="29" />
-              <folding>
-                <element signature="e#0#24#0" expanded="true" />
-                <marker date="1540534037625" expanded="true" signature="2467:2472" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Quizapp/classroom/templates/classroom/teachers/quiz_add_form.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Quizapp/templates/registration/login.html">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Quizapp/django_school/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#60#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Quizapp/classroom/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="54" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
-              <folding>
-                <element signature="e#0#37#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Quizapp/classroom/views/teachers.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
-              <caret line="241" column="74" lean-forward="true" selection-start-line="228" selection-start-column="1" selection-end-line="241" selection-end-column="74" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -168,8 +217,10 @@
         <option value="$PROJECT_DIR$/Quizapp/classroom/admin.py" />
         <option value="$PROJECT_DIR$/Quizapp/classroom/forms.py" />
         <option value="$PROJECT_DIR$/Quizapp/classroom/urls.py" />
-        <option value="$PROJECT_DIR$/Quizapp/classroom/models.py" />
         <option value="$PROJECT_DIR$/Quizapp/classroom/views/teachers.py" />
+        <option value="$PROJECT_DIR$/Quizapp/classroom/views/students.py" />
+        <option value="$PROJECT_DIR$/Quizapp/classroom/templates/classroom/students/education.html" />
+        <option value="$PROJECT_DIR$/Quizapp/classroom/models.py" />
       </list>
     </option>
   </component>
@@ -180,10 +231,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="2" />
-    <option name="width" value="1935" />
-    <option name="height" value="1037" />
+    <option name="x" value="-10" />
+    <option name="width" value="1920" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -191,7 +241,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -256,23 +305,11 @@
               <item name="Quizapp" type="462c0819:PsiDirectoryNode" />
               <item name="django_school" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Quizapplication" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Quizapplication" type="462c0819:PsiDirectoryNode" />
-              <item name="Quizapp" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Quizapplication" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Quizapplication" type="462c0819:PsiDirectoryNode" />
-              <item name="Quizapp" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="registration" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -311,7 +348,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25637585" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2671141" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -341,27 +378,30 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Quizapp/classroom/views/students.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="105" column="32" selection-start-line="105" selection-start-column="32" selection-end-line="105" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Quizapp/django_school/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="902">
           <caret line="129" column="29" lean-forward="true" selection-start-line="129" selection-start-column="29" selection-end-line="129" selection-end-column="29" />
-          <folding>
-            <element signature="e#314#323#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Quizapp/templates/registration/login.html">
+    <entry file="file://$PROJECT_DIR$/Quizapp/classroom/templates/classroom/teachers/quiz_add_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Quizapp/classroom/templates/classroom/students/quiz_list.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Quizapp/classroom/templates/classroom/students/take_quiz_form.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Quizapp/classroom/templates/classroom/students/interests_form.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Quizapp/classroom/templates/classroom/students/taken_quiz_list.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Quizapp/django_school/urls.py">
@@ -373,32 +413,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Quizapp/classroom/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#110#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Quizapp/classroom/templates/classroom/teachers/quiz_add_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Quizapp/classroom/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="54" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
+        <state relative-caret-position="357">
+          <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Quizapp/templates/registration/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-104" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Quizapp/templates/registration/signup.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Quizapp/templates/registration/signup_form.html">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Quizapp/classroom/views/classroom.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -409,38 +443,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Quizapp/classroom/templates/classroom/students/quiz_list.html">
+    <entry file="file://$PROJECT_DIR$/Quizapp/classroom/templates/classroom/students/_header.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Quizapp/classroom/forms.py">
+    <entry file="file://$PROJECT_DIR$/Quizapp/classroom/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="78" column="29" lean-forward="true" selection-start-line="78" selection-start-column="29" selection-end-line="78" selection-end-column="29" />
+        <state relative-caret-position="153">
+          <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
           <folding>
-            <element signature="e#0#24#0" expanded="true" />
-            <marker date="1540534037625" expanded="true" signature="2467:2472" ph="..." />
+            <element signature="e#0#129#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Quizapp/classroom/models.py">
+    <entry file="file://$PROJECT_DIR$/Quizapp/classroom/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="91" />
+        <state relative-caret-position="253">
+          <caret line="90" column="25" selection-start-line="90" selection-start-column="6" selection-end-line="90" selection-end-column="25" />
           <folding>
-            <element signature="e#0#51#0" expanded="true" />
-            <marker date="1540535465551" expanded="true" signature="3396:3405" ph="..." />
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Quizapp/classroom/templates/classroom/teachers/personal_detail_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="37" lean-forward="true" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Quizapp/classroom/views/students.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="135" column="33" selection-start-line="135" selection-start-column="33" selection-end-line="135" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Quizapp/classroom/views/teachers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="241" column="74" lean-forward="true" selection-start-line="228" selection-start-column="1" selection-end-line="241" selection-end-column="74" />
+        <state relative-caret-position="324">
+          <caret line="226" column="78" lean-forward="true" selection-start-line="226" selection-start-column="78" selection-end-line="226" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Quizapp/classroom/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="147" column="87" selection-start-line="147" selection-start-column="87" selection-end-line="147" selection-end-column="87" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#0#51#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Quizapp/classroom/templates/classroom/students/education.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
