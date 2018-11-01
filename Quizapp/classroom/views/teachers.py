@@ -13,6 +13,7 @@ from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
 from ..decorators import teacher_required
 from ..forms import BaseAnswerInlineFormSet, QuestionForm, TeacherSignUpForm
 from ..models import Answer, Question, Quiz, PersonalDetails, OrganizationalDetails, Job,  User
+from django.http import HttpResponseRedirect
 
 
 class TeacherSignUpView(CreateView):
@@ -225,7 +226,8 @@ class PersonalDetailsView(CreateView):
 
         personal_details.save()
         messages.success(self.request, 'Added Personal Details Successfully.')
-        return redirect('teachers:quiz_change', personal_details.pk)
+        #return redirect('teachers:add_personal', personal_details.pk)
+        return HttpResponseRedirect("")
 
 @method_decorator([login_required, teacher_required], name='dispatch')
 class OrganizationDetailsView(CreateView):
@@ -239,7 +241,9 @@ class OrganizationDetailsView(CreateView):
 
         organization_details.save()
         messages.success(self.request, 'Added Organizational Details Successfully. ')
-        return redirect('teachers:quiz_change', organization_details.pk)
+        return HttpResponseRedirect("")
+        #return redirect('teachers:add_organization', organization_details.pk)
+        
 
 @method_decorator([login_required, teacher_required], name='dispatch')
 class PostJobView(CreateView):
@@ -254,18 +258,5 @@ class PostJobView(CreateView):
 
         job.save()
         messages.success(self.request, 'Added Job Successfully.')
-        return redirect('teachers:quiz_change', job.pk)
-
-# @method_decorator([login_required, teacher_required], name='dispatch')
-# class JobListView(ListView):
-#     model = Job
-#     ordering = ('name',)
-#     context_object_name = 'jobs'
-#     template_name = 'classroom/teachers/quiz_change_list.html'
-
-#      def get_queryset(self):
-#          queryset = self.request.user.jobs \
-#              .select_related('subject') \
-#              .annotate(questions_count=Count('questions', distinct=True)) \
-#              .annotate(taken_count=Count('taken_quizzes', distinct=True))
-#          return queryset
+        #return redirect('teachers:post_job', job.pk)
+        return HttpResponseRedirect("")
