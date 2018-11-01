@@ -76,6 +76,8 @@ class TakenQuiz(models.Model):
 class StudentAnswer(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name='quiz_answers')
     answer = models.ForeignKey(Answer, on_delete=models.CASCADE, related_name='+')
+
+#For Training and Place Cell - IIIT Vadodara    
 OFFER = (
     (1, ('Job')),
     (2, ('Internship')),
@@ -88,6 +90,7 @@ SELECTION_PROCESS = (
     (4, ('Personal Interview (Technical + HR)')),
     (5, ('Written Test - Technical')),
 )
+
 # class RecruiterDetails(models.Model):
 #     first_name = models.CharField(max_length= 255)
 #     last_name = models.CharField(max_length= 255)
@@ -96,24 +99,13 @@ SELECTION_PROCESS = (
 #     organization_name = models.CharField(max_length= 255, blank= True, unique= True)
 #     organization_email = models.EmailField(max_length= 70, blank= True, null=True, unique= True)
 #     organization_description = models.CharField(max_length= 255)
-#     # organization_logo = models.ImageField(upload_to='organization_logo', blank=True)
+#     organization_logo = models.ImageField(upload_to='organization_logo', blank=True)
 
 #     def __str__(self):
 #         return (self.first_name + "  " + self.last_name + "  " + str(self.email) + "  " + str(self.mobile) + "  " + self.organization_name + "  " + str(self.organization_email)
 #                 + "  " + self.organization_description)
 
-class OrganizationalDetails(models.Model):
-    organization_name = models.CharField(max_length= 255, blank= True, unique= True)
-    organization_email = models.EmailField(max_length= 70, blank= True, null=True, unique= True)
-    organization_description = models.CharField(max_length= 255)
-    #organization_logo = models.ImageField(upload_to='organization_logo', blank=True)
-
-    def __str__(self):
-        return self.organization_name + " " + str(self.organization_email) + " " + self.organization_description
-
-
 class PersonalDetails(models.Model):
-    #organization_name = models.ForeignKey(OrganizationalDetails, on_delete=models.CASCADE, default = 1)
     first_name = models.CharField(max_length = 255)
     last_name = models.CharField(max_length = 255)
     email = models.EmailField(max_length= 70,blank= True, null=True, unique= True)
@@ -123,7 +115,7 @@ class PersonalDetails(models.Model):
         return self.first_name + " " + self.last_name + " " + str(self.email) + " " + str(self.mobile)
 
 class Job(models.Model):
-    #organization_name = models.ForeignKey(OrganizationalDetails, on_delete=models.CASCADE, default = 1)
+    date_of_posting = models.DateField(default=datetime.date.today)
     offer = models.IntegerField(choices=OFFER, default=1)
     primary_profile = models.CharField(max_length= 255)
     location = models.CharField(max_length= 255)
@@ -138,6 +130,25 @@ class Job(models.Model):
     selection_process = models.IntegerField(choices=SELECTION_PROCESS, default=1)
     other_details = models.CharField(max_length= 255)
 
-    def __str__(self):
-        return (str(self.offer) + " " + self.primary_profile + " " + self.location + " " + str(self.no_of_position) + " " + str(self.apply_deadline) + " " + str(self.drive_date) + " " + self.organization_sector + " " + self.job_description + " " + str(self.package) + " " + self.required_skills + " " + str(self.min_CPI) + " " + str(self.selection_process) + " " + self.other_details)
 
+    def __str__(self):
+        return (str(self.offer) + " " + self.primary_profile + " " + self.location + " " + str(self.no_of_position) + " " + 
+                str(self.apply_deadline) + " " + str(self.drive_date) + " " + self.organization_sector + " " + 
+                self.job_description + " " + str(self.package) + " " + self.required_skills + " " + str(self.min_CPI) + " " + 
+                str(self.selection_process) + " " + self.other_details)
+
+class OrganizationalDetails(models.Model):
+    personal_detail = models.ForeignKey(PersonalDetails, on_delete = models.CASCADE, blank=True, null=True)
+    job = models.ForeignKey(Job,on_delete = models.CASCADE, blank=True, null=True)
+    organization_name = models.CharField(max_length= 255, blank= True, unique= True)
+    organization_email = models.EmailField(max_length= 70, blank= True, null=True, unique= True)
+    organization_description = models.CharField(max_length= 255)
+    #organization_logo = models.ImageField(upload_to='organization_logo', blank=True)
+
+    def __str__(self):
+        return self.organization_name + " " + str(self.organization_email) + " " + self.organization_description
+
+
+class Submitter(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
+    date = models.DateField(default=datetime.date.today)
