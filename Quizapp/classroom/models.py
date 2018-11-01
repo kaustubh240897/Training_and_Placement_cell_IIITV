@@ -9,7 +9,6 @@ class User(AbstractUser):
     is_student = models.BooleanField(default=False)
     is_teacher = models.BooleanField(default=False)
 
-
 class Subject(models.Model):
     name = models.CharField(max_length=30)
     color = models.CharField(max_length=7, default='#007bff')
@@ -89,21 +88,42 @@ SELECTION_PROCESS = (
     (4, ('Personal Interview (Technical + HR)')),
     (5, ('Written Test - Technical')),
 )
-class RecruiterDetails(models.Model):
-    first_name = models.CharField(max_length= 255)
-    last_name = models.CharField(max_length= 255)
-    email = models.EmailField(max_length= 70,blank= True, null=True, unique= True)
-    mobile = models.IntegerField(max_length= 10)
+# class RecruiterDetails(models.Model):
+#     first_name = models.CharField(max_length= 255)
+#     last_name = models.CharField(max_length= 255)
+#     email = models.EmailField(max_length= 70,blank= True, null=True, unique= True)
+#     mobile = models.IntegerField()
+#     organization_name = models.CharField(max_length= 255, blank= True, unique= True)
+#     organization_email = models.EmailField(max_length= 70, blank= True, null=True, unique= True)
+#     organization_description = models.CharField(max_length= 255)
+#     # organization_logo = models.ImageField(upload_to='organization_logo', blank=True)
+
+#     def __str__(self):
+#         return (self.first_name + "  " + self.last_name + "  " + str(self.email) + "  " + str(self.mobile) + "  " + self.organization_name + "  " + str(self.organization_email)
+#                 + "  " + self.organization_description)
+
+class OrganizationalDetails(models.Model):
     organization_name = models.CharField(max_length= 255, blank= True, unique= True)
     organization_email = models.EmailField(max_length= 70, blank= True, null=True, unique= True)
     organization_description = models.CharField(max_length= 255)
-    # organization_logo = models.ImageField(upload_to='organization_logo', blank=True)
+    #organization_logo = models.ImageField(upload_to='organization_logo', blank=True)
 
     def __str__(self):
-        return (self.first_name + "  " + self.last_name + "  " + str(self.email) + "  " + str(self.mobile) + "  " + self.organization_name + "  " + str(self.organization_email)
-                + "  " + self.organization_description)
+        return self.organization_name + " " + str(self.organization_email) + " " + self.organization_description
+
+
+class PersonalDetails(models.Model):
+    #organization_name = models.ForeignKey(OrganizationalDetails, on_delete=models.CASCADE, default = 1)
+    first_name = models.CharField(max_length = 255)
+    last_name = models.CharField(max_length = 255)
+    email = models.EmailField(max_length= 70,blank= True, null=True, unique= True)
+    mobile = models.IntegerField()
+
+    def __str__(self):
+        return self.first_name + " " + self.last_name + " " + str(self.email) + " " + str(self.mobile)
 
 class Job(models.Model):
+    #organization_name = models.ForeignKey(OrganizationalDetails, on_delete=models.CASCADE, default = 1)
     offer = models.IntegerField(choices=OFFER, default=1)
     primary_profile = models.CharField(max_length= 255)
     location = models.CharField(max_length= 255)
@@ -120,3 +140,4 @@ class Job(models.Model):
 
     def __str__(self):
         return (str(self.offer) + " " + self.primary_profile + " " + self.location + " " + str(self.no_of_position) + " " + str(self.apply_deadline) + " " + str(self.drive_date) + " " + self.organization_sector + " " + self.job_description + " " + str(self.package) + " " + self.required_skills + " " + str(self.min_CPI) + " " + str(self.selection_process) + " " + self.other_details)
+

@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.db import transaction
 from django.forms.utils import ValidationError
 from classroom.models import (Answer, Question, Student, StudentAnswer,
-                              Subject, RecruiterDetails, Job, User)
+                              Subject, PersonalDetails, OrganizationalDetails, Job, User)
 
 
 class TeacherSignUpForm(UserCreationForm):
@@ -85,5 +85,17 @@ class TakeQuizForm(forms.ModelForm):
 
 class PersonalDetailsForm(forms.ModelForm):
     class Meta:
-        model = RecruiterDetails
+        model = PersonalDetails
         fields = ('first_name','last_name','email','mobile')
+
+class OrganizationalDetailsForm(forms.ModelForm):
+    class Meta:
+        model = OrganizationalDetails
+        fields = ('organization_name','organization_email','organization_description')
+
+class PostJobForm(forms.ModelForm):
+    class Meta:
+        model = Job
+        fields = ('offer','primary_profile','location','no_of_position','apply_deadline','drive_date','organization_sector','job_description','package','required_skills','min_CPI','selection_process','other_details')
+
+
