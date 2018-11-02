@@ -124,10 +124,10 @@ class Job(models.Model):
     drive_date = models.DateField(default=datetime.date.today)
     organization_sector = models.CharField(max_length= 255)
     job_description = models.CharField(max_length= 255)
-    package = models.DecimalField(decimal_places=1,max_digits=2)
+    package = models.DecimalField(decimal_places=2,max_digits=4)
     required_skills = models.CharField(max_length= 255)
     min_CPI = models.DecimalField(decimal_places=2,max_digits=4)
-    selection_process = models.IntegerField(choices=SELECTION_PROCESS, default=1)
+    selection_process = models.IntegerField( choices=SELECTION_PROCESS, default=1)
     other_details = models.CharField(max_length= 255)
 
 
@@ -152,3 +152,4 @@ class OrganizationalDetails(models.Model):
 class Submitter(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
     date = models.DateField(default=datetime.date.today)
+

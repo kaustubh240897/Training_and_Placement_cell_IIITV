@@ -7,7 +7,7 @@
     </ol>
   </nav>
   <!-- <h2 class="mb-3">My Quizzes</h2> -->
-  <a href="{% url 'teachers:quiz_change_list' %}" class="btn btn-primary mb-3" role="button">Home</a>
+  <a href="{% url 'teachers:my_jobs' %}" class="btn btn-primary mb-3" role="button">Home</a>
   <a href="{% url 'teachers:add_personal' %}" class="btn btn-primary mb-3" role="button">Personal Details</a>
   <a href="{% url 'teachers:add_organization' %}" class="btn btn-primary mb-3" role="button">Organizational Details</a>
   <a href="{% url 'teachers:post_job' %}" class="btn btn-primary mb-3" role="button">Post Job</a>
@@ -25,29 +25,29 @@
         </tr>
       </thead>
       <tbody>
-        {{request.user}}
-        {% for job in jobs %}
-          <tr>
-            <!-- <td class="align-middle"><a href="{% url 'teachers:quiz_change' quiz.pk %}">{{ quiz.name }}</a></td>
-            <td class="align-middle">{{ quiz.subject.get_html_badge }}</td>
-            <td class="align-middle">{{ quiz.questions_count }}</td>
-            <td class="align-middle">{{ quiz.taken_count }}</td>
-            <td class="text-right">
-              <a href="{% url 'teachers:quiz_results' quiz.pk %}" class="btn btn-primary">View results</a>
-            </td> -->
-            <td class="align-middle">{{ job.date_of_posting }}</td>
-            <td class="align-middle">{{ job.primary_profile }}</td>
-            <td class="align-middle">Approved</td>
-            <td class="align-middle">{{ job.apply_deadline }}</td>
-            <td class="align-middle">{{ job.no_of_position }}</td>
-            <td class="align-middle">{{ job. }}</td>
-          </tr>
-        {% empty %}
-          <tr>
-            <td class="bg-light text-center font-italic" colspan="5">You haven't created any quiz yet.</td>
-          </tr>
-        {% endfor %}
+         <!--<table class="table table-bordered">-->
+          {% for object in object_list %}
+            <tr>
+              <td>x</td>
+              <td>{{ object.primary_profile}}</td>
+              <td>x</td>
+              <td>x</td>
+              <td>{{ object.apply_deadline }}</td>
+              <td>{{ object.no_of_position }}</td>
+              <td>{{ object.package }}</td>
+              <!--<td>x</td>-->
+              <!--<td>x</td>-->
+            </tr>
+          {% endfor %}
       </tbody>
-    </table> 
+    </table>
+        <!--<section>-->
+            <!--<tr>-->
+              <!--<td class="bg-light text-center font-italic" colspan="5">Any student had not applied yet.</td>-->
+            <!--</tr>-->
+
+          <!--</section>-->
+      </tbody>
+    </table>
   </div>
 {% endblock %}

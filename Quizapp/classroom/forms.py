@@ -97,3 +97,4 @@ class PostJobForm(forms.ModelForm):
         model = Job
         fields = ('offer','primary_profile','location','no_of_position','apply_deadline','drive_date','organization_sector','job_description','package','required_skills','min_CPI','selection_process','other_details')
 
+

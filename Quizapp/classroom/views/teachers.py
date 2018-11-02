@@ -1,5 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth import login
+
 from django.contrib.auth.decorators import login_required
 from django.db import transaction
 from django.db.models import Avg, Count
@@ -260,3 +261,15 @@ class PostJobView(CreateView):
         messages.success(self.request, 'Added Job Successfully.')
         #return redirect('teachers:post_job', job.pk)
         return HttpResponseRedirect("")
+
+
+class my_jobView(ListView):
+    model = Job
+    template_name='classroom/teachers/quiz_change_list.html'
+    context_object_name = 'object_list'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['object_list'] = Job.objects.all()
+        print(context['object_list'])
+        return context
