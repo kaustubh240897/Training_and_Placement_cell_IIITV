@@ -1,0 +1,155 @@
+* {
+    border: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+      /* padding-top: 2%; */
+      overflow-x: hidden;
+      height: 100%;
+    }
+      a {
+        color: inherit;
+        font-family: inherit;
+        font-size: inherit;
+        text-decoration: none;
+      }
+      h1{
+        font-weight: bold;
+      }
+  
+                                     /* NAVIGATION AREA */
+       .headings {
+         width: 100%;
+         margin-left:15%;
+         padding: 6%;
+       }
+       .navbar-header h4{
+         font-weight:bold;
+         line-height: 0.4;
+       }
+       .navbar-header h6{
+         width: 400px;
+       }
+       .navbar-brand {
+         padding: 0;
+       }
+       .navbar-brand>img {
+         height: 90px;
+         padding: 15px;
+         width: 90px;
+       }
+       .navbar-alignit .navbar-header {
+             -webkit-transform-style: preserve-3d;
+         -moz-transform-style: preserve-3d;
+         transform-style: preserve-3d;
+         height: 50px;
+       }
+       .navbar-alignit .navbar-brand {
+           top: 50%;
+           display: block;
+           position: relative;
+           height: 10%;
+           transform: translate(0,-50%);
+           margin-right: 15px;
+         margin-left: 15px;
+       }
+  /* Details Section  */
+  
+  hr{
+    border:1px solid grey;
+    margin-top: 1%;
+  }
+     .container{
+       padding: 0;
+     }
+     .loginAreaImage{
+       background-image:url('image/sea.png');
+       background-position: center;
+       background-repeat: no-repeat;
+       background-size: cover;
+       height:500px;
+       padding-top:100px;
+       width: 100%;
+     }
+                                                                /* INSIDE-CARD-CONTENT */
+      .card{
+        box-shadow: 0 4px 8px 3px rgba(0, 0, 0, 0.3);
+        /* height: 500px; */
+        background: white;
+        padding: 16px;
+        margin-left:10%;
+      }
+      .btnmn{
+        font-size:14px;
+        color: black;
+        display: inline-block;
+        border:1px solid #DEE6FB;
+        padding: 3px 25px;
+        margin:0;
+  
+      }
+      #bt1{
+        background-color:#128FF2;
+        color: white;
+      }
+      #bt2{
+        background-color: white;
+      }
+      #bt3{
+        background-color:white;
+      }
+      #bt4{
+        /* margin-left: 20%; */
+        background-color: #FEA100;
+        color:white;
+      }
+      #bt5{
+        background-color:white;
+      }
+      #bt6{
+        background-color: white;
+      }
+      .fa-home{
+        color:#128FF2;
+        font-size:18px;
+      }
+  
+      /* Inside the Second Card */
+      .c-head hr{
+        width:8%;
+        border:2px solid skyblue;
+      }
+     .c-head h4{
+       font-weight:550;
+     }
+  
+  
+  /* FOOTER */
+      footer{
+         background-color: #3f3f3f;
+         padding: 4% 2% 3% 2%;
+         color: #fff;
+         /* margin-top:%; */
+     }
+     .spn{
+         color: white;
+         font-size:12px;
+         margin-top: 5%;
+     }
+     .h4{
+         font-weight: 800;
+         font-size: 15px;
+     }
+     .f-para{
+         font-size:12px;
+     }
+     .foot-img{
+         height: 120px;
+         width: 120px;
+         margin: 20px 100px;
+         border-radius: 50%;
+     }
+  

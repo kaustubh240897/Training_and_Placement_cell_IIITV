@@ -131,6 +131,14 @@ hr{
    .c-head h4{
      font-weight:550;
    }
+    #fname {
+    width: 55%;
+    padding: 5px 10px 0px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid rgb(82, 78, 78);
+}
 
 
 /* FOOTER */
