@@ -2,37 +2,70 @@
 
 {% block content %}
   {% include 'classroom/students/_header.html' with active='new' %}
-  <div class="card">
+  <div class="card" style="width:100%;">
     <table class="table mb-0">
-      <thead>
+
+
+
+
+        <thead>
         <tr>
-          <th>Quiz</th>
-          <th>Subject</th>
-          <th>Length</th>
-          <th>Password</th>
-          <th></th>
+            <th>Organization name</th>
+            <th>Application deadline</th>
+
+          <!--<th>Posted on</th>-->
+          <th>Offer</th>
+          <th>Location</th>
+          <th>No. of postions</th>
+          <th>Organisation Sector</th>
+          <th>Job description</th>
+          <th>Package</th>
+          <th>Skills</th>
+          <th>Min CPI</th>
+
         </tr>
       </thead>
       <tbody>
-        {% for quiz in quizzes %}
-          <tr>
-            <td class="align-middle">{{ quiz.name }}</td>
-            <td class="align-middle">{{ quiz.subject.get_html_badge }}</td>
-            <td class="align-middle">{{ quiz.questions_count }} questions</td>
-            <form method="POST" action="{% url 'students:take_quiz' quiz.pk %}">
-              {% csrf_token %}
-              <td class="align-middle">
-                <input type="text" name="password"/>
-              </td>
-              <td class="text-right">
-                <button type="submit" class="save btn btn-primary">Start</button>
+
+       {% for object in object_list %}
+            <tr>
+                <td>{{object.org.organization_name}}</td>
+               <td>{{ object.date_of_posting}}</td>
+                <td>{{ object.offer }}</td>
+              <td>{{ object.location }}</td>
+              <td>{{ object.no_of_position }}</td>
+              <td>{{ object.organization_sector }}</td>
+              <td>{{ object.job_description }}</td>
+              <td>{{ object.package }}</td>
+              <td>{{ object.required_skills }}</td>
+              <td>{{ object.min_CPI }}</td>
+               <td class="text-right">
+                <button type="submit" class="save btn btn-primary">Apply</button></td>
+
+
+              <!--<td>x</td>-->
+              <!--<td>x</td>-->
+            </tr>
+          {% endfor %}
+
+        <!--{% for quiz in quizzes %}-->
+          <!--<tr>-->
+            <!--<td class="align-middle">{{ quiz.date_of_posting }}</td>-->
+            <!--<td class="align-middle">{{ quiz.drive_date }}</td>-->
+            <!--<td class="align-middle">{{ quiz.offer }}</td>-->
+            <!--<form method="POST" action="{% url 'students:take_quiz' quiz.pk %}">-->
+              <!--{% csrf_token %}-->
+              <!--<td class="align-middle">-->
+                <!--<input type="text" name="password"/>-->
+              <!--</td>-->
+
                 <!--<a href="{% url 'students:take_quiz' quiz.pk %}" class="btn btn-primary">Start quiz</a>-->
-              </td>
-           </form>
+
+           <!--</form>-->
           </tr>
         {% empty %}
           <tr>
-            <td class="bg-light text-center font-italic" colspan="4">No quiz matching your interests right now.</td>
+            <td class="bg-light text-center font-italic" colspan="4"> you had applied for no job till now</td>
           </tr>
         {% endfor %}
       </tbody>

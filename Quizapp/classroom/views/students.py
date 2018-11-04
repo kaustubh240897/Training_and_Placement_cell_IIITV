@@ -11,7 +11,7 @@ from django.views.generic import CreateView, ListView, UpdateView
 
 from ..decorators import student_required
 from ..forms import StudentInterestsForm, StudentSignUpForm, TakeQuizForm
-from ..models import Quiz, Student, TakenQuiz, User
+from ..models import Quiz, Student, TakenQuiz, User, Job, OrganizationalDetails
 
 
 class StudentSignUpView(CreateView):
@@ -46,30 +46,18 @@ class StudentInterestsView(UpdateView):
 
 @method_decorator([login_required, student_required], name='dispatch')
 class QuizListView(ListView):
-    model = Quiz
-    ordering = ('name',)
-    context_object_name = 'quizzes'
-    template_name = 'classroom/students/quiz_list.html'
+        model = Job
+        template_name = 'classroom/students/quiz_list.html'
+        context_object_name = 'object_list'
 
-    # def post(self, request, *args, **kwargs):
-    #     # self.status_form = StatusForm(self.request.POST or None)
-    #     print(args)
-    #     print(kwargs)
-    #     if self.status_form.is_valid():
-    #         pass
-    #     else:
-    #         # return super(List, self).post(request, *args, **kwargs)
-    #         pass
+        def get_context_data(self, **kwargs):
+            context = super().get_context_data(**kwargs)
+            context['object_list'] = Job.objects.all()
 
-    def get_queryset(self):
-        student = self.request.user.student
-        student_interests = student.interests.values_list('pk', flat=True)
-        taken_quizzes = student.quizzes.values_list('pk', flat=True)
-        queryset = Quiz.objects.filter(subject__in=student_interests) \
-            .exclude(pk__in=taken_quizzes) \
-            .annotate(questions_count=Count('questions')) \
-            .filter(questions_count__gt=0)
-        return queryset
+            print(context['object_list'])
+            return context
+
+
 
 
 @method_decorator([login_required, student_required], name='dispatch')
