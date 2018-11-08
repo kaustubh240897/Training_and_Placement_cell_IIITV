@@ -16,7 +16,7 @@ hr{
     background-size: 50% 100%;
     height: 100vh;
     width: 100%;
-    /*overflow-x: hidden;*/
+    overflow-x: hidden;
 }
 
 .LowerDiv{
@@ -104,14 +104,15 @@ hr{
     /*transform: skewX(25deg);*/
 
 }
-.navbar-toggle{
+
+.navbar-toggle {
     position: relative;
     float: right;
     padding: 9px 10px;
-    margin-top:39px;
+    margin-top: 8px;
     margin-right: 15px;
-    margin-bottom:8px;
-    color: transparent;
+    margin-bottom: 8px;
+    /* background-color: transparent; */
     background-image: none;
     border: 1px solid transparent;
     border-radius: 4px;
@@ -131,7 +132,17 @@ hr{
     color: white;
 }
 .ListItems a{
-    color:white;
+  color:#828387;
+}
+.mid-line{
+  margin-top: 6%;
+  background-color:#828387;
+  height:1px;
+  left: 0;
+  right: 0;
+  top: 10%;
+  /* z-index: -1; */
+  position: absolute;
 }
 /*.active{
     color: white;
@@ -177,9 +188,6 @@ hr{
     position: relative;
     width: 100%;
 }
-
-
-
                                                                                          /*About TNP Cell*/
 .row-padding{
     margin: 10px 230px;
@@ -213,12 +221,10 @@ hr{
 .paragraph{
     float: left;
     font-size: 18px;
-
 }
-
 .card{
   box-shadow: 0 4px 8px 3px rgba(0, 0, 0, 0.3);
-  height: 290px;
+  height: 320px;
   padding: 16px;
   text-align: left;
 }
@@ -231,9 +237,7 @@ hr{
 .card h6{
     font-size: 15px;
     text-align:
-}
-
-                                                                           /*Director's Message*/
+}                                                                           /*Director's Message*/
 .fa-quote-left{
     float: left;
     font-size: 50px;
@@ -259,32 +263,6 @@ hr{
     /*padding: 20px;*/
     margin-left:53px;
 }
-                                                                              /* What company says About Us */
-    /* .bs-example{
-    	margin: 200px 150px 0;
-      padding: 5%;
-    }
-    .popover-title .close{
-        position: relative;
-        bottom: 3px;
-    } */
-
-
-  .showme{
-  display: none;
-  }
-  .showhim:hover .showme{
-  display : block;
-  }
-  .showhim:hover .ok{
-  display : none;
-  }
-
-
-
-
-                                                                             /*INDUSTRY PARTNERS*/
-
 .padding {
     padding: 80px 0;
     padding-bottom: 2rem;
@@ -312,49 +290,52 @@ hr{
     height: 200px;
     width: 200px;
 }
-/*What Company Say About Us*/
+                                                                          /*What Company Say About Us*/
 
-.card1 {
-	/* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6); */
-	width: 100px;
-	height: 100px;
-	padding-right:30%;
-	font-size: 16px;
-	font-family: sans-serif;
-	float: left;
-	margin-left:60%;
-  margin-top: 10%;
+.panel{
+  width:70%;
+  margin-left: 12%;
+  -webkit-box-shadow: 0px 3px 8px 3px rgba(199,175,199,1);
+-moz-box-shadow: 0px 3px 8px 3px rgba(199,175,199,1);
+box-shadow: 0px 3px 8px 3px rgba(199,175,199,1);
 }
-
-
+.tri-angle{
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 40px 15px 0 15px;
+  border-color: #CFD4EA transparent transparent transparent;
+  margin-left: 15%;
+  margin-top: -1%;
+/* border:1px solid #bdbdbd; */
+}
 
                                                                                     /*Footer*/
-footer{
-    width: 100%;
-    background-color: #3f3f3f;
-    padding: 2% 2% 3% 2%;
-    color: #fff;
 
-}
-.spn{
-    color: white;
-    font-size:3vmin;
-    margin-top: 10px;
-}
-.h4{
-    font-weight: 600;
-    font-size: 3vmin;
-}
-.f-para{
-    font-size:3vmin;
-}
-.foot-img{
-    height: 120px;
-    width: 120px;
-    margin: 20px 100px;
-    border-radius: 50%;
-}
-
+      footer{
+         background-color: #3f3f3f;
+         padding: 4% 2% 3% 2%;
+         color: #fff;
+         /* margin-top:%; */
+     }
+     .spn{
+         color: white;
+         font-size:12px;
+         margin-top: 5%;
+     }
+     .h4{
+         font-weight: 800;
+         font-size: 15px;
+     }
+     .f-para{
+         font-size:12px;
+     }
+     .foot-img{
+         height: 120px;
+         width: 120px;
+         margin: 20px 100px;
+         border-radius: 50%;
+     }
 
 /* Media queries */
 @media (max-width: 900px) {
