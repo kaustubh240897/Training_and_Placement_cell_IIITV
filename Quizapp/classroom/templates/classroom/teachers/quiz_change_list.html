@@ -4,13 +4,15 @@
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item active" aria-current="page">Recruiter Profile</li>
+      <li class="breadcrumb-item active" aria-current="page">{{ detail.first_name }}</li>
     </ol>
   </nav>
-  <!-- <h2 class="mb-3">My Quizzes</h2> -->
   <a href="{% url 'teachers:my_jobs' %}" class="btn btn-primary mb-3" role="button">Home</a>
   <a href="{% url 'teachers:add_personal' %}" class="btn btn-primary mb-3" role="button">Personal Details</a>
   <a href="{% url 'teachers:add_organization' %}" class="btn btn-primary mb-3" role="button">Organizational Details</a>
   <a href="{% url 'teachers:post_job' %}" class="btn btn-primary mb-3" role="button">Post Job</a>
+  <!-- <a href="{% url 'teachers:details_list' %}" class="btn btn-primary mb-3" role="button">View Details</a> -->
+  
   <div class="card">
     <table class="table mb-0">
       <thead>
@@ -25,8 +27,8 @@
         </tr>
       </thead>
       <tbody>
-         <!--<table class="table table-bordered">-->
-          {% for object in object_list %}
+         <table class="table table-bordered">
+          {% for object in jobs %}
             <tr>
               <td>{{ object.date_of_posting }}</td>
               <td>{{ object.primary_profile}}</td>
@@ -35,18 +37,12 @@
               <td>{{ object.apply_deadline }}</td>
               <td>{{ object.no_of_position }}</td>
               <td>{{ object.package }}</td>
-              <!--<td>x</td>-->
-              <!--<td>x</td>-->
+            </tr>
+          {% empty %}
+            <tr>
+              <td class="bg-light text-center font-italic" colspan="5">You haven't created any job yet.</td>
             </tr>
           {% endfor %}
-      </tbody>
-    </table>
-        <!--<section>-->
-            <!--<tr>-->
-              <!--<td class="bg-light text-center font-italic" colspan="5">Any student had not applied yet.</td>-->
-            <!--</tr>-->
-
-          <!--</section>-->
       </tbody>
     </table>
   </div>
