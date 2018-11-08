@@ -33,6 +33,7 @@
             <!--<td>{{ taken_quiz.score }}</td>-->
           <!--</tr>-->
 
+
          {% for object in object_list %}
          {% if object.student.user == user %}
 
@@ -41,15 +42,14 @@
            <td> {{ object.student.user }}</td>
            <td>{{ object.applied_job.package }}</td>
          </tr>
+
         {% endif %}
         {% empty %}
           <tr>
-            <td class="bg-light text-center font-italic" colspan="3">You haven't completed any quiz yet.</td>
+            <td class="bg-light text-center font-italic" colspan="3">You haven't applied for any job  yet.</td>
           </tr>
 
         {% endfor %}
-
-
       </tbody>
     </table>
   </div>

@@ -29,7 +29,7 @@ class TeacherSignUpView(CreateView):
     def form_valid(self, form):
         user = form.save()
         login(self.request, user)
-        return redirect('teachers:quiz_change_list')
+        return redirect('teachers:my_jobs')
 
 
 @method_decorator([login_required, teacher_required], name='dispatch')
@@ -90,7 +90,7 @@ class QuizDeleteView(DeleteView):
     model = Quiz
     context_object_name = 'quiz'
     template_name = 'classroom/teachers/quiz_delete_confirm.html'
-    success_url = reverse_lazy('teachers:quiz_change_list')
+    success_url = reverse_lazy('teachers:my_jobs')
 
     def delete(self, request, *args, **kwargs):
         quiz = self.get_object()
@@ -260,7 +260,7 @@ class PostJobView(CreateView):
         job.save()
         messages.success(self.request, 'Added Job Successfully.')
         #return redirect('teachers:post_job', job.pk)
-        return HttpResponseRedirect("")
+        return HttpResponseRedirect('', Job.pk)
 
 
 class my_jobView(ListView):
@@ -273,3 +273,6 @@ class my_jobView(ListView):
         context['object_list'] = Job.objects.all()
         print(context['object_list'])
         return context
+
+
+

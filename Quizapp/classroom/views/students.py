@@ -3,15 +3,16 @@ from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.db import transaction
 from django.db.models import Count
-from django.http import JsonResponse
+from django.http import JsonResponse, request
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
 from django.views.generic import CreateView, ListView, UpdateView
 
 from ..decorators import student_required
-from ..forms import StudentInterestsForm, StudentSignUpForm, TakeQuizForm
-from ..models import Quiz, Student, TakenQuiz, User, Job, OrganizationalDetails
+from ..forms import  StudentSignUpForm, TakeQuizForm
+from ..models import Quiz, Student, TakenQuiz, User, Job, OrganizationalDetails, TakenJob
+from django.http import HttpResponseRedirect
 
 
 class StudentSignUpView(CreateView):
@@ -29,24 +30,25 @@ class StudentSignUpView(CreateView):
         return redirect('students:quiz_list')
 
 
-@method_decorator([login_required, student_required], name='dispatch')
-class StudentInterestsView(UpdateView):
-    model = Student
-    form_class = StudentInterestsForm
-    template_name = 'classroom/students/interests_form.html'
-    success_url = reverse_lazy('students:quiz_list')
-
-    def get_object(self):
-        return self.request.user.student
-
-    def form_valid(self, form):
-        messages.success(self.request, 'Interests updated with success!')
-        return super().form_valid(form)
+# @method_decorator([login_required, student_required], name='dispatch')
+# class StudentInterestsView(UpdateView):
+#     model = Student
+#     form_class = StudentInterestsForm
+#     template_name = 'classroom/students/interests_form.html'
+#     success_url = reverse_lazy('students:quiz_list')
+#
+#     def get_object(self):
+#         return self.request.user.student
+#
+#     def form_valid(self, form):
+#         messages.success(self.request, 'Interests updated with success!')
+#         return super().form_valid(form)
 
 
 @method_decorator([login_required, student_required], name='dispatch')
 class QuizListView(ListView):
         model = Job
+        model = OrganizationalDetails
         template_name = 'classroom/students/quiz_list.html'
         context_object_name = 'object_list'
 
@@ -57,7 +59,30 @@ class QuizListView(ListView):
             print(context['object_list'])
             return context
 
-
+    # model = Job
+    # ordering = ('name',)
+    # context_object_name = 'quizzes'
+    # template_name = 'classroom/students/quiz_list.html'
+    #
+    # # def post(self, request, *args, **kwargs):
+    # #     # self.status_form = StatusForm(self.request.POST or None)
+    # #     print(args)
+    # #     print(kwargs)
+    # #     if self.status_form.is_valid():
+    # #         pass
+    # #     else:
+    # #         # return super(List, self).post(request, *args, **kwargs)
+    # #         pass
+    #
+    # def get_queryset(self):
+    #     student = self.request.user.student
+    #     student_interests = student.interests.values_list('pk', flat=True)
+    #     taken_quizzes = student.quizzes.values_list('pk', flat=True)
+    #     queryset = Quiz.objects.filter(subject__in=student_interests) \
+    #         .exclude(pk__in=taken_quizzes) \
+    #         .annotate(questions_count=Count('questions')) \
+    #         .filter(questions_count__gt=0)
+    #     return queryset
 
 
 @method_decorator([login_required, student_required], name='dispatch')
@@ -119,4 +144,71 @@ def take_quiz(request, pk):
             'form': form,
             'progress': progress
         })
+
+
+
+
+
+
+@method_decorator([login_required, student_required], name='dispatch')
+class TakenJobListView(ListView):
+    model = TakenJob
+    context_object_name = 'object_list'
+    template_name = 'classroom/students/taken_quiz_list.html'
+    # print(para)
+    # d = TakenJob()
+    # # d.student = 'Student'
+    # d.Organizational_name = 's232dsd'
+    # d.save()
+
+    def get_queryset(self):
+        return self.kwargs['pk']
+
+    def get_context_data(self, *args, **kwargs):
+        print(args)
+        context = super().get_context_data(**kwargs)
+        jb = Job.objects.get(pk=self.get_queryset())
+        check_student = TakenJob.objects.all()
+        flag = True
+        for i in check_student:
+            if(i.student == self.request.user.student and i.applied_job == jb):
+                flag = False
+        if flag:
+            taken_job = TakenJob(student=self.request.user.student, applied_job=jb).save()
+        else :
+            print("you had applied before")
+
+        context['object_list'] = TakenJob.objects.filter( applied_job=jb)
+        print("*******************************")
+        print(context['object_list'])
+        return context
+
+
+
+@method_decorator([login_required, student_required], name='dispatch')
+class TakenJobsListView(ListView):
+    model = TakenJob
+    context_object_name = 'object_list'
+    template_name = 'classroom/students/TakenJobs.html'
+    # print(para)
+    # d = TakenJob()
+    # # d.student = 'Student'
+    # d.Organizational_name = 's232dsd'
+    # d.save()
+
+    # def get_queryset(self):
+        # return self.kwargs['pk']
+
+    def get_context_data(self, *args, **kwargs):
+        print(args)
+        context = super().get_context_data(**kwargs)
+        # jb = Job.objects.get(pk=self.get_queryset())
+        check_student = TakenJob.objects.all().filter(student=self.request.user.student)
+
+        context['object_list'] = TakenJob.objects.filter(student=self.request.user.student)
+        print("*******************************")
+        print(context['object_list'])
+        return context
+
+
 

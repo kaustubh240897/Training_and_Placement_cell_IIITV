@@ -15,6 +15,7 @@
     <table class="table mb-0">
       <thead>
         <tr>
+          <th>Organisation name</th>
           <th>Date</th>
           <th>Profile</th>
           <th>Status</th>
@@ -28,8 +29,9 @@
          <!--<table class="table table-bordered">-->
           {% for object in object_list %}
             <tr>
-              <td>x</td>
+              <td>{{ object.org.organization_name }}</td>
               <td>{{ object.primary_profile}}</td>
+              <td>x</td>
               <td>x</td>
               <td>x</td>
               <td>{{ object.apply_deadline }}</td>
