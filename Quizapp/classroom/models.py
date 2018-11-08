@@ -51,6 +51,7 @@ class PersonalDetails(models.Model):
     def __str__(self):
         return self.first_name + " " + self.last_name
 
+
 class Job(models.Model):
     class Meta:
         verbose_name_plural = 'Job'
@@ -78,6 +79,11 @@ class Job(models.Model):
                 str(self.apply_deadline) + " " + str(self.drive_date) + " " + self.organization_sector + " " + 
                 self.job_description + " " + str(self.package) + " " + self.required_skills + " " + str(self.min_CPI) + " " + 
                 str(self.selection_process) + " " + self.other_details)
+
+
+class TakenJob(models.Model):
+    student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name='quizes')
+    applied_job = models.ForeignKey(Job, on_delete=models.CASCADE, null='TRUE',blank='TRUE' , related_name='applied_job')
 
 
 class Submitter(models.Model):

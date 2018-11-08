@@ -112,3 +112,6 @@ class PersonalDetailListView(ListView):
         context['personal'] = PersonalDetails.objects.all().filter(user=self.request.user)
         print(context['personal'])
         return context
+
+
+

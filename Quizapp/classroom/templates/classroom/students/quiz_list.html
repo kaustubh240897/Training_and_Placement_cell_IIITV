@@ -15,7 +15,7 @@
           <th>No. of postions</th>
           <th>Organisation Sector</th>
           <th>Job description</th>
-          <th>Package</th>
+          <th>Package(in LPA)</th>
           <th>Skills</th>
           <th>Min CPI</th>
 
@@ -25,9 +25,11 @@
 
        {% for object in object_list %}
             <tr>
-                <td>{{object.org.organization_name}}</td>
-               <td>{{ object.date_of_posting}}</td>
-                <td>{{ object.offer }}</td>
+                <td>{{ object.org.organization_name }}</td>
+              <td>{{ object.date_of_posting }}</td>
+
+              <!--<td>{{ object.drive_date }}</td>-->
+              <td>{{ object.offer }}</td>
               <td>{{ object.location }}</td>
               <td>{{ object.no_of_position }}</td>
               <td>{{ object.organization_sector }}</td>
@@ -36,7 +38,15 @@
               <td>{{ object.required_skills }}</td>
               <td>{{ object.min_CPI }}</td>
                <td class="text-right">
-                <button type="submit" class="save btn btn-primary">Apply</button></td>
+                <!--<button  type="submit" class="save btn btn-primary">Apply</button>-->
+                  {% if enable %}
+                   <a href="{% url 'students:taken_quiz_list' object.pk%}" class="save btn btn-primary" value="Upload">Apply</a>
+                   {% else %}
+                   <a href="{% url 'students:taken_quiz_list' object.pk%}" class="save btn btn-primary" value="Upload" disabled="TRUE">Apply</a>
+                   {% endif %}
+
+
+               </td>
 
 
               <!--<td>x</td>-->
