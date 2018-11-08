@@ -29,11 +29,18 @@
          <!--<table class="table table-bordered">-->
           {% for object in object_list %}
             <tr>
+<<<<<<< HEAD
               <td>{{ object.org.organization_name }}</td>
               <td>{{ object.primary_profile}}</td>
               <td>x</td>
               <td>x</td>
               <td>x</td>
+=======
+              <td>{{ object.date_of_posting }}</td>
+              <td>{{ object.primary_profile}}</td>
+              <td>Approved</td>
+              <td><a href="#">View Application</a></td>
+>>>>>>> beaff029bd36d16266907c5737b12e34403b6073
               <td>{{ object.apply_deadline }}</td>
               <td>{{ object.no_of_position }}</td>
               <td>{{ object.package }}</td>

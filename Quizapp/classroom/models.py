@@ -120,7 +120,7 @@ class Job(models.Model):
     other_details = models.CharField(max_length= 255)
 
     def __str__(self):
-        return (str(self.offer) + " " + self.primary_profile + " " + self.location + " " + str(self.no_of_position) + " " + 
+        return (str(self.date_of_posting) + " " + str(self.offer) + " " + self.primary_profile + " " + self.location + " " + str(self.no_of_position) + " " + 
                 str(self.apply_deadline) + " " + str(self.drive_date) + " " + self.organization_sector + " " + 
                 self.job_description + " " + str(self.package) + " " + self.required_skills + " " + str(self.min_CPI) + " " + 
                 str(self.selection_process) + " " + self.other_details)

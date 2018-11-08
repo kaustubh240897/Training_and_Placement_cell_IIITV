@@ -249,7 +249,7 @@ class OrganizationDetailsView(CreateView):
 @method_decorator([login_required, teacher_required], name='dispatch')
 class PostJobView(CreateView):
     model = Job
-    fields = ('offer','primary_profile','location','no_of_position','apply_deadline','drive_date','organization_sector','job_description','package',
+    fields = ('date_of_posting','offer','primary_profile','location','no_of_position','apply_deadline','drive_date','organization_sector','job_description','package',
                 'required_skills','min_CPI','selection_process','other_details')
     template_name = 'classroom/teachers/post_job_form.html'
 

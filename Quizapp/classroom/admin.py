@@ -13,4 +13,3 @@ admin.site.register(PersonalDetails)
 admin.site.register(OrganizationalDetails)
 admin.site.register(Job)
 admin.site.register(TakenJob)
-

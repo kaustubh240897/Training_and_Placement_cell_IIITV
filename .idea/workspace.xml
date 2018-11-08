@@ -5,25 +5,21 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Quizapp/classroom/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Quizapp/classroom/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Quizapp/classroom/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Quizapp/classroom/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quizapp/classroom/migrations/0005_auto_20181029_2333.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quizapp/classroom/migrations/0005_auto_20181030_1258.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quizapp/classroom/migrations/0006_auto_20181030_1326.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quizapp/classroom/migrations/0007_auto_20181031_1336.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quizapp/classroom/migrations/0008_merge_20181101_1624.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quizapp/classroom/migrations/0009_auto_20181101_1624.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quizapp/classroom/migrations/0010_auto_20181102_0153.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quizapp/classroom/migrations/0011_auto_20181104_1318.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quizapp/classroom/migrations/0012_auto_20181104_1322.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Quizapp/classroom/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/Quizapp/classroom/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Quizapp/classroom/migrations/0002_create_initial_subjects.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Quizapp/classroom/migrations/0003_quiz_password.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Quizapp/classroom/migrations/0004_job_recruiterdetails.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Quizapp/classroom/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Quizapp/classroom/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quizapp/classroom/templates/classroom/students/_header.html" beforeDir="false" afterPath="$PROJECT_DIR$/Quizapp/classroom/templates/classroom/students/_header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Quizapp/classroom/templates/classroom/students/quiz_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Quizapp/classroom/templates/classroom/students/quiz_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quizapp/classroom/templates/classroom/students/taken_quiz_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Quizapp/classroom/templates/classroom/students/taken_quiz_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Quizapp/classroom/templates/classroom/teachers/organization_detail_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/Quizapp/classroom/templates/classroom/teachers/organization_detail_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Quizapp/classroom/templates/classroom/teachers/personal_detail_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/Quizapp/classroom/templates/classroom/teachers/personal_detail_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Quizapp/classroom/templates/classroom/teachers/post_job_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/Quizapp/classroom/templates/classroom/teachers/post_job_form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Quizapp/classroom/templates/classroom/teachers/quiz_change_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Quizapp/classroom/templates/classroom/teachers/quiz_change_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Quizapp/classroom/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Quizapp/classroom/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quizapp/classroom/views/students.py" beforeDir="false" afterPath="$PROJECT_DIR$/Quizapp/classroom/views/students.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Quizapp/classroom/views/teachers.py" beforeDir="false" afterPath="$PROJECT_DIR$/Quizapp/classroom/views/teachers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quizapp/templates/registration/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/Quizapp/templates/registration/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quizapp/templates/registration/signup_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/Quizapp/templates/registration/signup_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Quizapp/django_school/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Quizapp/django_school/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/PostJob.css" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/PostJob.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/PostJob.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/PostJob.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -84,8 +80,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Quizapp/classroom/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="51" lean-forward="true" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
+            <state relative-caret-position="-642">
+              <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
@@ -93,11 +89,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Quizapp/classroom/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="136">
+              <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
               <folding>
                 <element signature="e#0#141#0" expanded="true" />
               </folding>
@@ -108,8 +104,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Quizapp/classroom/templates/classroom/students/quiz_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="833">
-              <caret line="49" column="30" lean-forward="true" selection-start-line="49" selection-start-column="30" selection-end-line="49" selection-end-column="30" />
+            <state relative-caret-position="765">
+              <caret line="45" column="30" lean-forward="true" selection-start-line="45" selection-start-column="30" selection-end-line="45" selection-end-column="30" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -161,11 +157,11 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Quizapp/classroom/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+            <state relative-caret-position="561">
+              <caret line="35" selection-start-line="35" selection-end-line="35" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
               </folding>
@@ -221,11 +217,11 @@
         <option value="$PROJECT_DIR$/Quizapp/classroom/templates/classroom/students/taken_quiz_list.html" />
         <option value="$PROJECT_DIR$/Quizapp/classroom/templates/classroom/students/_header.html" />
         <option value="$PROJECT_DIR$/Quizapp/classroom/templates/classroom/students/quiz_list.html" />
-        <option value="$PROJECT_DIR$/Quizapp/classroom/models.py" />
-        <option value="$PROJECT_DIR$/Quizapp/classroom/admin.py" />
         <option value="$PROJECT_DIR$/Quizapp/classroom/views/students.py" />
         <option value="$PROJECT_DIR$/Quizapp/classroom/urls.py" />
         <option value="$PROJECT_DIR$/Quizapp/classroom/forms.py" />
+        <option value="$PROJECT_DIR$/Quizapp/classroom/admin.py" />
+        <option value="$PROJECT_DIR$/Quizapp/classroom/models.py" />
       </list>
     </option>
   </component>
@@ -349,7 +345,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="0" width="1536" height="830" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17208672" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -582,30 +577,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Quizapp/classroom/templates/classroom/students/quiz_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="49" column="30" lean-forward="true" selection-start-line="49" selection-start-column="30" selection-end-line="49" selection-end-column="30" />
+        <state relative-caret-position="765">
+          <caret line="45" column="30" lean-forward="true" selection-start-line="45" selection-start-column="30" selection-end-line="45" selection-end-column="30" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Quizapp/classroom/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="e#0#141#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Quizapp/classroom/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="51" lean-forward="true" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -629,10 +604,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Quizapp/classroom/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+        <state relative-caret-position="561">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Quizapp/classroom/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-642">
+          <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Quizapp/classroom/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#141#0" expanded="true" />
           </folding>
         </state>
       </provider>
