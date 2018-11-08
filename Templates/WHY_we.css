@@ -8,7 +8,7 @@
 body {
     /* padding-top: 2%; */
     overflow-x: hidden;
-    /* height: 100%; */
+    height: 100%;
   }
     a {
       color: inherit;
@@ -21,7 +21,8 @@ body {
     }
     hr{
       border: 3px solid skyblue;
-      width: 7%;
+      width:7%;
+      /* margin-top: 6%; */
     }
                                    /* NAVIGATION AREA */
      .headings {
@@ -153,16 +154,16 @@ body {
         flex-wrap: wrap;
         padding: 0 4px;
     }
-    
+
     /* Create four equal columns that sits next to each other */
     .column {
         -ms-flex: 25%; /* IE10 */
         flex: 25%;
         max-width: 80%;
-        padding: 0 4px;
+        padding: 0 10px;
         margin-left:20%;
     }
-    
+
     .column img {
         /* padding: 5%; */
         margin-top: 8px;
@@ -173,7 +174,6 @@ body {
     .Row11{
         margin-left: 10%;
     }
-                                                      
                                                          /* BEYOND ACADEMICS */
    .crd-sze{
      width:70%;
@@ -186,27 +186,29 @@ body {
      width: 100%;
      height: 50%;
    }
-                                                         /* FOOTER */
-   footer{
-      background-color: #3f3f3f;
-      padding: 4% 2% 3% 2%;
-      color: #fff;
-  }
-  .spn{
-      color: white;
-      font-size:2.5vmin;
-      margin-top: 5%;
-  }
-  .h4{
-      font-weight: 600;
-      font-size: 2.5vmin;
-  }
-  .f-para{
-      font-size:3vmin;
-  }
-  .foot-img{
-      height: 120px;
-      width: 120px;
-      margin: 20px 100px;
-      border-radius: 50%;
-  }
+                                                                /*Footer*/
+
+footer{
+background-color: #3f3f3f;
+padding: 4% 2% 3% 2%;
+color: #fff;
+/* margin-top:%; */
+}
+.spn{
+color: white;
+font-size:12px;
+margin-top: 5%;
+}
+.h4{
+font-weight: 800;
+font-size: 15px;
+}
+.f-para{
+font-size:12px;
+}
+.foot-img{
+height: 120px;
+width: 120px;
+margin: 20px 100px;
+border-radius: 50%;
+}
