@@ -32,7 +32,7 @@
               <td>{{ object.date_of_posting }}</td>
               <td>{{ object.primary_profile }}</td>
               <td>Approved</td>
-              <td><a href="#">View Application</a></td>
+              <td><a href="{% url 'teachers:view_applicants' object.id %}">View Application</a></td>
               <td>{{ object.apply_deadline }}</td>
               <td>{{ object.no_of_position }}</td>
               <td>{{ object.package }}</td>
