@@ -16,7 +16,6 @@ from ..forms import TeacherSignUpForm
 from ..models import Quiz, Question, PersonalDetails, OrganizationalDetails, Job, User, TakenJob
 from django.http import HttpResponseRedirect
 
-
 class TeacherSignUpView(CreateView):
     model = User
     form_class = TeacherSignUpForm
@@ -302,3 +301,8 @@ class my_jobsView(ListView):
 #             context['applied_job'] = TakenJob.objects.all()
 #             print(context['applied_job'])
 #             return context
+
+def view_application(request, pk):
+    job = Job.objects.get(pk=pk)
+    applicants = TakenJob.objects.filter(applied_job=job)
+    return render(request, 'classroom/teachers/view_application.html',{'applicants': applicants})

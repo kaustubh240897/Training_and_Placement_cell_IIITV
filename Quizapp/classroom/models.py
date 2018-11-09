@@ -137,6 +137,8 @@ class TakenJob(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name='quizes')
     applied_job = models.ForeignKey(Job, on_delete=models.CASCADE, null='TRUE',blank='TRUE' , related_name='applied_job')
 
+    def __str__(self):
+        return str(self.student.user)
 
 class Submitter(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
