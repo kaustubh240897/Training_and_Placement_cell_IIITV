@@ -1,0 +1,188 @@
+* {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    /* padding-top: 2%; */
+    overflow-x: hidden;
+    height: 100%;
+  }
+    a {
+      color: inherit;
+      font-family: inherit;
+      font-size: inherit;
+      text-decoration: none;
+    }
+    h1,h5,h6{
+      font-weight: bold;
+    }
+   h3{
+     font-weight:bold;
+     color:#128FF2 ;
+     font-size: 15px;
+     margin-top: 0;
+   }
+
+                                   /* NAVIGATION AREA */
+     .headings {
+       width: 100%;
+       margin-left:15%;
+       padding: 6%;
+     }
+     .navbar-header h4{
+       font-weight:bold;
+       line-height: 0.4;
+     }
+     .navbar-header h6{
+       width: 400px;
+     }
+     .navbar-brand {
+       padding: 0;
+     }
+     .navbar-brand>img {
+       height: 90px;
+       padding: 15px;
+       width: 90px;
+     }
+     .navbar-alignit .navbar-header {
+     	  -webkit-transform-style: preserve-3d;
+       -moz-transform-style: preserve-3d;
+       transform-style: preserve-3d;
+       height: 50px;
+     }
+     .navbar-alignit .navbar-brand {
+     	top: 50%;
+     	display: block;
+     	position: relative;
+     	height: 10%;
+     	transform: translate(0,-50%);
+     	margin-right: 15px;
+       margin-left: 15px;
+     }
+
+                                                              /* IMAGE & CARD SECTION */
+ hr{
+   border:1px solid grey;
+   margin-top: 1%;
+ }
+    .container{
+      padding: 0;
+    }
+    .loginAreaImage{
+      background-image:url('image/sea.png');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      /* height:700px; */
+      padding-top:100px;
+      padding-bottom: 100px;
+      width: 100%;
+    }
+                                                               /* INSIDE-CARD-CONTENT */
+     .card{
+       box-shadow: 0 4px 8px 3px rgba(0, 0, 0, 0.3);
+       /* height: 500px; */
+       background: white;
+       padding: 16px;
+       margin-left:7%;
+     }
+     .btnn{
+       font-size: 70%;
+       float: right;
+       color: white;
+       margin-right: 2%;
+       display: inline-block;
+       border:1px solid #DEE6FB;
+       padding: 7px 28px;
+     }
+     #bt1{
+       background-color:white;
+       color:black;
+     }
+     #bt2{
+       background-color:#FEA100;
+     }
+     .fa-home{
+       color:#128FF2;
+       font-size:18px;
+     }
+     .fa-cog{
+       margin-top: 0;
+       color:black;
+       font-size: 20px;
+       float: right;
+     }
+     .panel{
+       width:80%;
+       margin-left: 10%;
+     }
+     .panel-body p{
+       font-size:12px;
+       padding: 1%;
+       padding-left: 0;
+     }
+     .panel-footer{
+       background-color:#E2E5F3;
+     }
+     #HASH {
+        color:#128FF2;
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+      }
+      .smalltext h6{
+        font-weight:bold;
+        color:black;
+      }
+      .smalltext p{
+        padding:5%;
+        padding-left:0;
+        color:black;
+      }
+      #img1{
+        height:80px;
+        width:140px;
+        padding-top: 0;
+      }
+      .ios-circle img{
+        height:80px;
+        width:80px;
+      }
+       .pager{
+         padding-right:10%;
+         text-align: right;
+         list-style: none;
+       }
+       #pan-inner{
+         font-weight:bold;
+         color:#128FF2 ;
+         /* font-size: 15px; */
+         margin-top: 0;
+       }
+                                                   /* FOOTER */
+     footer{
+        background-color: #3f3f3f;
+        padding: 4% 2% 3% 2%;
+        color: #fff;
+    }
+    .spn{
+        color: white;
+        font-size:12px;
+        margin-top: 5%;
+    }
+    .h4{
+        font-weight: 800;
+        font-size: 15px;
+    }
+    .f-para{
+        font-size:12px;
+    }
+    .foot-img{
+        height: 120px;
+        width: 120px;
+        margin: 20px 100px;
+        border-radius: 50%;
+    }
