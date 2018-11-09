@@ -17,7 +17,7 @@ from ..models import Quiz, Student, TakenQuiz, User, Job, OrganizationalDetails
 class StudentSignUpView(CreateView):
     model = User
     form_class = StudentSignUpForm
-    template_name = 'registration/signup_form.html'
+    template_name = 'registration/login-final.html'
 
     def get_context_data(self, **kwargs):
         kwargs['user_type'] = 'student'
@@ -119,4 +119,3 @@ def take_quiz(request, pk):
             'form': form,
             'progress': progress
         })
-
