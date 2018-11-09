@@ -19,7 +19,7 @@ from django.http import HttpResponseRedirect
 class TeacherSignUpView(CreateView):
     model = User
     form_class = TeacherSignUpForm
-    template_name = 'registration/signup_form.html'
+    template_name = 'registration/recruiter-login.html'
 
     def get_context_data(self, **kwargs):
         kwargs['user_type'] = 'teacher'
@@ -232,7 +232,6 @@ class OrganizationDetailsView(CreateView):
             
         #return HttpResponseRedirect("")
         return redirect('teachers:add_personal')
-
 
 @method_decorator([login_required, teacher_required], name='dispatch')
 class PersonalDetailsView(CreateView):

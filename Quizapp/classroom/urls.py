@@ -4,6 +4,7 @@ from .views import classroom, students, teachers
 
 urlpatterns = [
     path('', classroom.home, name='home'),
+    path('why-iiitv',classroom.why_we, name='WHY_we'),
 
     path('students/', include(([
         path('', students.QuizListView.as_view(), name='quiz_list'),

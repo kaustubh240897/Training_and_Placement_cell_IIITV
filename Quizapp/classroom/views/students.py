@@ -18,7 +18,7 @@ from django.http import HttpResponseRedirect
 class StudentSignUpView(CreateView):
     model = User
     form_class = StudentSignUpForm
-    template_name = 'registration/signup_form.html'
+    template_name = 'registration/login-final.html'
 
     def get_context_data(self, **kwargs):
         kwargs['user_type'] = 'student'
@@ -144,12 +144,7 @@ def take_quiz(request, pk):
             'form': form,
             'progress': progress
         })
-
-
-
-
-
-
+      
 @method_decorator([login_required, student_required], name='dispatch')
 class TakenJobListView(ListView):
     model = TakenJob
