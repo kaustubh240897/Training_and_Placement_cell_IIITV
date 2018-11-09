@@ -1,14 +1,12 @@
 <h2>Jobs</h2>
-<p class="text-muted">
-  Subjects:{% for subject in user.student.interests.all %} {{ subject.get_html_badge }}{% endfor %}
-  <a href="{% url 'students:student_interests' %}"><small>(update interests)</small></a>
-</p>
+
 
 <ul class="nav nav-tabs mb-3">
   <li class="nav-item">
-    <a class="nav-link{% if active == 'new' %} active{% endif %}" href="{% url 'students:quiz_list' %}">Home</a>
+    <a class="nav-link{% if active == 'new' %} active{% endif %}" href="{% url 'students:quiz_list' %}">Dashboard</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link{% if active == 'taken' %} active{% endif %}" href="{% url 'students:taken_quiz_list' %}">Applied jobs</a>
+
+    <a class="nav-link{% if active == 'taken' %} active{% endif %}" href="{% url 'students:taken_job_list' %}  " >Applied jobs</a>
   </li>
 </ul>

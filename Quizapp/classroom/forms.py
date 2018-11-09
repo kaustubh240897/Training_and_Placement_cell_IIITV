@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.db import transaction
 from django.forms.utils import ValidationError
 from classroom.models import (Answer, Question, Student, StudentAnswer,
-                              Subject, PersonalDetails, OrganizationalDetails, Job, User)
+                               PersonalDetails, OrganizationalDetails, Job, User, TakenJob)
 
 class TeacherSignUpForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
@@ -18,11 +18,7 @@ class TeacherSignUpForm(UserCreationForm):
 
 
 class StudentSignUpForm(UserCreationForm):
-    interests = forms.ModelMultipleChoiceField(
-        queryset=Subject.objects.all(),
-        widget=forms.CheckboxSelectMultiple,
-        required=True
-    )
+
 
     class Meta(UserCreationForm.Meta):
         model = User
@@ -33,17 +29,11 @@ class StudentSignUpForm(UserCreationForm):
         user.is_student = True
         user.save()
         student = Student.objects.create(user=user)
-        student.interests.add(*self.cleaned_data.get('interests'))
+        # student.interests.add(*self.cleaned_data.get('interests'))
         return user
 
 
-class StudentInterestsForm(forms.ModelForm):
-    class Meta:
-        model = Student
-        fields = ('interests', )
-        widgets = {
-            'interests': forms.CheckboxSelectMultiple
-        }
+
 
 
 class QuestionForm(forms.ModelForm):
@@ -96,5 +86,3 @@ class PostJobForm(forms.ModelForm):
     class Meta:
         model = Job
         fields = ('date_of_posting','offer','primary_profile','location','no_of_position','apply_deadline','drive_date','organization_sector','job_description','package','required_skills','min_CPI','selection_process','other_details')
-
-

@@ -8,16 +8,17 @@ urlpatterns = [
 
     path('students/', include(([
         path('', students.QuizListView.as_view(), name='quiz_list'),
-        path('interests/', students.StudentInterestsView.as_view(), name='student_interests'),
-        path('taken/', students.TakenQuizListView.as_view(), name='taken_quiz_list'),
+        path('taken/<int:pk>/', students.TakenJobListView.as_view(), name='taken_quiz_list'),
+        path('takenjobs/', students.TakenJobsListView.as_view(), name='taken_job_list'),
         path('quiz/<int:pk>/', students.take_quiz, name='take_quiz'),
       ], 'classroom'), namespace='students')),
 
     path('teachers/', include(([
-        path('', teachers.my_jobView.as_view(), name='my_jobs'),
+        path('', teachers.my_jobsView.as_view(), name='my_jobs'),
         path('quiz/add/personal', teachers.PersonalDetailsView.as_view(), name='add_personal'),
         path('quiz/add/organization', teachers.OrganizationDetailsView.as_view(), name='add_organization'),
         path('quiz/add/job', teachers.PostJobView.as_view(), name='post_job'),
+        path('quiz/<int:pk>/applicants/', teachers.view_application, name='view_applicants'),
         path('quiz/<int:pk>/', teachers.QuizUpdateView.as_view(), name='quiz_change'),
         path('quiz/<int:pk>/delete/', teachers.QuizDeleteView.as_view(), name='quiz_delete'),
         path('quiz/<int:pk>/results/', teachers.QuizResultsView.as_view(), name='quiz_results'),

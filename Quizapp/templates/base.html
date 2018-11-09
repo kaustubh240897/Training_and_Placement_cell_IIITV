@@ -23,14 +23,13 @@
             <div class="col-6">
               <h1 class="logo">
                 <a href="{% url 'home' %}">
-                  Training & Placement Cell - IIIT Vadodara
-                  {% if user.is_authenticated %}
+                  <img src="{% static 'img/logo_iiitv.png' %}" style="width: 50px; height: 50px;">
+                    <span><h4>Training & Placement Cell - IIIT Vadodara</h4></span>
                     {% if user.is_teacher %}
                       <span class="icon" data-toggle="tooltip" data-placement="right" title="Teacher profile"></span>
                     {% else %}
                       <span class="icon" data-toggle="tooltip" data-placement="right" title="Student profile"></span>
                     {% endif %}
-                  {% endif %}
                 </a>
               </h1>
             </div>
@@ -54,6 +53,7 @@
                 </div>
               {% endfor %}
               {% block content %}
+
               {% endblock %}
             </div>
           </div>

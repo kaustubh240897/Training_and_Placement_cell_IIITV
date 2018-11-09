@@ -9,24 +9,10 @@ class User(AbstractUser):
     is_student = models.BooleanField(default=False)
     is_teacher = models.BooleanField(default=False)
 
-class Subject(models.Model):
-    name = models.CharField(max_length=30)
-    color = models.CharField(max_length=7, default='#007bff')
-
-    def __str__(self):
-        return self.name
-
-    def get_html_badge(self):
-        name = escape(self.name)
-        color = escape(self.color)
-        html = '<span class="badge badge-primary" style="background-color: %s">%s</span>' % (color, name)
-        return mark_safe(html)
-
-
 class Quiz(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='quizzes')
     name = models.CharField(max_length=255)
-    subject = models.ForeignKey(Subject, on_delete=models.CASCADE, related_name='quizzes')
+    # subject = models.ForeignKey(Subject, on_delete=models.CASCADE, related_name='quizzes')
     password = models.CharField(blank=True, null=True, max_length=10)
 
     def __str__(self):
@@ -53,7 +39,7 @@ class Answer(models.Model):
 class Student(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     quizzes = models.ManyToManyField(Quiz, through='TakenQuiz')
-    interests = models.ManyToManyField(Subject, related_name='interested_students')
+    # interests = models.ManyToManyField(Subject, related_name='interested_students')
 
     def get_unanswered_questions(self, quiz):
         answered_questions = self.quiz_answers \
@@ -79,19 +65,38 @@ class StudentAnswer(models.Model):
 
 #For Training and Place Cell - IIIT Vadodara    
 OFFER = (
-    (1, ('Job')),
-    (2, ('Internship')),
-    (3, ('Job + Internship'))
+    (('Job'), ('Job')),
+    (('Internship'), ('Internship')),
+    (('Job + Internship'), ('Job + Internship'))
 )
 SELECTION_PROCESS = (
-    (1, ('Shortlisting from Resumes')),
-    (2, ('Written Test - Aptitude')),
-    (3, ('Group Discussion')),
-    (4, ('Personal Interview (Technical + HR)')),
-    (5, ('Written Test - Technical')),
+    (('Shortlisting from Resumes'), ('Shortlisting from Resumes')),
+    (('Written Test = Aptitude'), ('Written Test - Aptitude')),
+    (('Group Discussion'), ('Group Discussion')),
+    (('Personal Interview (Technical + HR)'), ('Personal Interview (Technical + HR)')),
+    (('Written Test - Technical'), ('Written Test - Technical')),
 )
 
+class OrganizationalDetails(models.Model):
+    class Meta:
+        verbose_name_plural = 'OrganizationalDetail'
+
+    user = models.OneToOneField(User, unique=True, on_delete=models.CASCADE, blank=True, null=True) 
+    organization_name = models.CharField(max_length= 255, blank= True, unique= True)
+    organization_email = models.EmailField(max_length= 70, blank= True, null=True, unique= True)
+    organization_description = models.CharField(max_length= 255)
+    #organization_logo = models.ImageField(upload_to='organization_logo', blank=True)
+
+    def __str__(self):
+        return self.organization_name
+
+
 class PersonalDetails(models.Model):
+    class Meta:
+        verbose_name_plural = 'PersonalDetail'
+
+    user = models.OneToOneField(User, unique=True, on_delete=models.CASCADE, blank=True, null=True)
+    organization = models.OneToOneField(OrganizationalDetails, on_delete=models.CASCADE, blank=True, null=True, related_name='personal_details')
     first_name = models.CharField(max_length = 255)
     last_name = models.CharField(max_length = 255)
     email = models.EmailField(max_length= 70,blank= True, null=True, unique= True)
@@ -100,21 +105,14 @@ class PersonalDetails(models.Model):
     def __str__(self):
         return self.first_name + " " + self.last_name + " " + str(self.email) + " " + str(self.mobile)
 
-class OrganizationalDetails(models.Model):
-    personal_detail = models.ForeignKey(PersonalDetails, on_delete = models.CASCADE, blank=True, null=True)
-    organization_name = models.CharField(max_length= 255, blank= True, unique= True)
-    organization_email = models.EmailField(max_length= 70, blank= True, null=True, unique= True)
-    organization_description = models.CharField(max_length= 255)
-    #organization_logo = models.ImageField(upload_to='organization_logo', blank=True)
-
-    def __str__(self):
-        return self.organization_name + " " + str(self.organization_email) + " " + self.organization_description
-
-
 class Job(models.Model):
+    class Meta:
+        verbose_name_plural = 'Job'
+    
+    user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
+    organization = models.ForeignKey(OrganizationalDetails, on_delete = models.CASCADE, blank=True, null=True, related_name='Job')
     date_of_posting = models.DateField(default=datetime.date.today)
-    org = models.ForeignKey(OrganizationalDetails,on_delete = models.CASCADE, blank=True, null=True, related_name='Job')
-    offer = models.IntegerField(choices=OFFER, default=1)
+    offer = models.CharField(choices=OFFER, default=1, max_length=50)
     primary_profile = models.CharField(max_length= 255)
     location = models.CharField(max_length= 255)
     no_of_position = models.IntegerField()
@@ -125,7 +123,7 @@ class Job(models.Model):
     package = models.DecimalField(decimal_places=2,max_digits=4)
     required_skills = models.CharField(max_length= 255)
     min_CPI = models.DecimalField(decimal_places=2,max_digits=4)
-    selection_process = models.IntegerField( choices=SELECTION_PROCESS, default=1)
+    selection_process = models.CharField( choices=SELECTION_PROCESS, default=1, max_length=50)
     other_details = models.CharField(max_length= 255)
 
     def __str__(self):
@@ -135,7 +133,13 @@ class Job(models.Model):
                 str(self.selection_process) + " " + self.other_details)
 
 
+class TakenJob(models.Model):
+    student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name='quizes')
+    applied_job = models.ForeignKey(Job, on_delete=models.CASCADE, null='TRUE',blank='TRUE' , related_name='applied_job')
+
+    def __str__(self):
+        return str(self.student.user)
+
 class Submitter(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
     date = models.DateField(default=datetime.date.today)
-

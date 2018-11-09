@@ -12,30 +12,17 @@
   <a href="{% url 'teachers:add_personal' %}" class="btn btn-primary mb-3" role="button">Personal Details</a>
   <a href="{% url 'teachers:post_job' %}" class="btn btn-primary mb-3" role="button">Post Job</a>
   
-  
   <div class="card">
     <table class="table mb-0">
       <thead>
         <tr>
-          <th>Date</th>
-          <th>Profile</th>
-          <th>Status</th>
-          <th>Application</th>
-          <th>Application Deadline</th>
-          <th>Number of Position</th>
-          <th>Package</th>
+          <th>Username</th>
         </tr>
       </thead>
       <tbody>
-          {% for object in jobs %}
+          {% for object in applicants %}
             <tr>
-              <td>{{ object.date_of_posting }}</td>
-              <td>{{ object.primary_profile }}</td>
-              <td>Approved</td>
-              <td><a href="{% url 'teachers:view_applicants' object.id %}">View Application</a></td>
-              <td>{{ object.apply_deadline }}</td>
-              <td>{{ object.no_of_position }}</td>
-              <td>{{ object.package }}</td>
+              <td>{{ object.student.user }}</td>
             </tr>
           {% empty %}
             <tr>

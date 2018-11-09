@@ -8,26 +8,26 @@
         <li class="breadcrumb-item active" aria-current="page">Recruiter Profile</li>
       </ol>
     </nav>
-    <!-- <h2 class="mb-3">My Quizzes</h2> -->
     <a href="{% url 'teachers:my_jobs' %}" class="btn btn-primary mb-3" role="button">Home</a>
-    <a href="{% url 'teachers:add_personal' %}" class="btn btn-primary mb-3" role="button">Personal Details</a>
-    <a href="{% url 'teachers:add_organization' %}" class="btn btn-primary mb-3" role="button">Organizational Details</a>
-    <a href="{% url 'teachers:post_job' %}" class="btn btn-primary mb-3" role="button">Post Job</a>
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="{% url 'teachers:my_jobs' %}">Recruiter's Profile</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Post Job</li>
-    </ol>
-  </nav>
-  <h2 class="mb-3">Post Job Here</h2>
-  <div class="row">
-    <div class="col-md-6 col-sm-8 col-12">
-      <form method="post" novalidate>
-        {% csrf_token %}
-        {{ form|crispy }}
-        <button type="submit" class="btn btn-success">Save</button>
-        <a href="{% url 'teachers:my_jobs' %}" class="btn btn-outline-secondary" role="button">Cancel</a>
-      </form>
+  <a href="{% url 'teachers:add_organization' %}" class="btn btn-primary mb-3" role="button">Organizational Details</a>
+  <a href="{% url 'teachers:add_personal' %}" class="btn btn-primary mb-3" role="button">Personal Details</a>
+  <a href="{% url 'teachers:post_job' %}" class="btn btn-primary mb-3" role="button">Post Job</a>
+    
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'teachers:my_jobs' %}">Recruiter's Profile</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Post Job</li>
+      </ol>
+    </nav>
+    <h2 class="mb-3">Post Job Here</h2>
+    <div class="row">
+      <div class="col-md-6 col-sm-8 col-12">
+        <form method="post" novalidate>
+          {% csrf_token %}
+          {{ form|crispy }}
+          <button type="submit" class="btn btn-success">Save</button>
+          <a href="{% url 'teachers:my_jobs' %}" class="btn btn-outline-secondary" role="button">Cancel</a>
+        </form>
+      </div>
     </div>
-  </div>
 {% endblock %}
