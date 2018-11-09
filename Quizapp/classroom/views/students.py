@@ -48,15 +48,15 @@ class StudentSignUpView(CreateView):
 @method_decorator([login_required, student_required], name='dispatch')
 class QuizListView(ListView):
         model = Job
-        model = OrganizationalDetails
+        #model = OrganizationalDetails
         template_name = 'classroom/students/quiz_list.html'
-        context_object_name = 'object_list'
+        context_object_name = 'job_list'
 
         def get_context_data(self, **kwargs):
             context = super().get_context_data(**kwargs)
-            context['object_list'] = Job.objects.all()
+            context['job_list'] = Job.objects.all()
 
-            print(context['object_list'])
+            print(context['job_list'])
             return context
 
     # model = Job
@@ -155,12 +155,7 @@ class TakenJobListView(ListView):
     model = TakenJob
     context_object_name = 'object_list'
     template_name = 'classroom/students/taken_quiz_list.html'
-    # print(para)
-    # d = TakenJob()
-    # # d.student = 'Student'
-    # d.Organizational_name = 's232dsd'
-    # d.save()
-
+ 
     def get_queryset(self):
         return self.kwargs['pk']
 
@@ -174,13 +169,11 @@ class TakenJobListView(ListView):
             if(i.student == self.request.user.student and i.applied_job == jb):
                 flag = False
         if flag:
+            messages.success(self.request, 'Applied Successfully !!!')
             taken_job = TakenJob(student=self.request.user.student, applied_job=jb).save()
         else :
-            print("you had applied before")
-
+            messages.error(self.request, 'Already registered for this job!!!!')
         context['object_list'] = TakenJob.objects.filter( applied_job=jb)
-        print("*******************************")
-        print(context['object_list'])
         return context
 
 
@@ -190,25 +183,9 @@ class TakenJobsListView(ListView):
     model = TakenJob
     context_object_name = 'object_list'
     template_name = 'classroom/students/TakenJobs.html'
-    # print(para)
-    # d = TakenJob()
-    # # d.student = 'Student'
-    # d.Organizational_name = 's232dsd'
-    # d.save()
-
-    # def get_queryset(self):
-        # return self.kwargs['pk']
-
     def get_context_data(self, *args, **kwargs):
         print(args)
         context = super().get_context_data(**kwargs)
-        # jb = Job.objects.get(pk=self.get_queryset())
         check_student = TakenJob.objects.all().filter(student=self.request.user.student)
-
         context['object_list'] = TakenJob.objects.filter(student=self.request.user.student)
-        print("*******************************")
-        print(context['object_list'])
         return context
-
-
-

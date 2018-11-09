@@ -37,7 +37,7 @@
          {% if object.student.user == user %}
 
          <tr>
-           <td>{{ object.applied_job.org.organization_name }}</td>
+           <td>{{ object.applied_job.organization.organization_name }}</td>
            <td> {{ object.student.user }}</td>
            <td>{{ object.applied_job.package }}</td>
          </tr>
