@@ -23,11 +23,17 @@ class TeacherSignUpView(CreateView):
 
     def get_context_data(self, **kwargs):
         kwargs['user_type'] = 'teacher'
+
+        print(super().get_context_data(**kwargs))
         return super().get_context_data(**kwargs)
 
     def form_valid(self, form):
         user = form.save()
+        print("*** check ******")
+        print(self. model.username)
         login(self.request, user)
+        messages.success(self.request, 'Successfully sign .')
+
         return redirect('teachers:add_organization')
 
 @method_decorator([login_required, teacher_required], name='dispatch')
@@ -121,71 +127,71 @@ class QuizResultsView(DetailView):
         return self.request.user.quizzes.all()
 
 
-@login_required
-@teacher_required
-def question_add(request, pk):
-    # By filtering the quiz by the url keyword argument `pk` and
-    # by the owner, which is the logged in user, we are protecting
-    # this view at the object-level. Meaning only the owner of
-    # quiz will be able to add questions to it.
-    quiz = get_object_or_404(Quiz, pk=pk, owner=request.user)
+# @login_required
+# @teacher_required
+# def question_add(request, pk):
+#     # By filtering the quiz by the url keyword argument `pk` and
+#     # by the owner, which is the logged in user, we are protecting
+#     # this view at the object-level. Meaning only the owner of
+#     # quiz will be able to add questions to it.
+#     quiz = get_object_or_404(Quiz, pk=pk, owner=request.user)
+#
+#     if request.method == 'POST':
+#         form = QuestionForm(request.POST)
+#         if form.is_valid():
+#             question = form.save(commit=False)
+#             question.quiz = quiz
+#             question.save()
+#             messages.success(request, 'You may now add answers/options to the question.')
+#             return redirect('teachers:question_change', quiz.pk, question.pk)
+#     else:
+#         form = QuestionForm()
+#
+#     return render(request, 'classroom/teachers/question_add_form.html', {'quiz': quiz, 'form': form})
+#
 
-    if request.method == 'POST':
-        form = QuestionForm(request.POST)
-        if form.is_valid():
-            question = form.save(commit=False)
-            question.quiz = quiz
-            question.save()
-            messages.success(request, 'You may now add answers/options to the question.')
-            return redirect('teachers:question_change', quiz.pk, question.pk)
-    else:
-        form = QuestionForm()
-
-    return render(request, 'classroom/teachers/question_add_form.html', {'quiz': quiz, 'form': form})
-
-
-@login_required
-@teacher_required
-def question_change(request, quiz_pk, question_pk):
-    # Simlar to the `question_add` view, this view is also managing
-    # the permissions at object-level. By querying both `quiz` and
-    # `question` we are making sure only the owner of the quiz can
-    # change its details and also only questions that belongs to this
-    # specific quiz can be changed via this url (in cases where the
-    # user might have forged/player with the url params.
-    quiz = get_object_or_404(Quiz, pk=quiz_pk, owner=request.user)
-    question = get_object_or_404(Question, pk=question_pk, quiz=quiz)
-
-    AnswerFormSet = inlineformset_factory(
-        Question,  # parent model
-        Answer,  # base model
-        formset=BaseAnswerInlineFormSet,
-        fields=('text', 'is_correct'),
-        min_num=2,
-        validate_min=True,
-        max_num=10,
-        validate_max=True
-    )
-
-    if request.method == 'POST':
-        form = QuestionForm(request.POST, instance=question)
-        formset = AnswerFormSet(request.POST, instance=question)
-        if form.is_valid() and formset.is_valid():
-            with transaction.atomic():
-                form.save()
-                formset.save()
-            messages.success(request, 'Question and answers saved with success!')
-            return redirect('teachers:quiz_change', quiz.pk)
-    else:
-        form = QuestionForm(instance=question)
-        formset = AnswerFormSet(instance=question)
-
-    return render(request, 'classroom/teachers/question_change_form.html', {
-        'quiz': quiz,
-        'question': question,
-        'form': form,
-        'formset': formset
-    })
+# @login_required
+# @teacher_required
+# def question_change(request, quiz_pk, question_pk):
+#     # Simlar to the `question_add` view, this view is also managing
+#     # the permissions at object-level. By querying both `quiz` and
+#     # `question` we are making sure only the owner of the quiz can
+#     # change its details and also only questions that belongs to this
+#     # specific quiz can be changed via this url (in cases where the
+#     # user might have forged/player with the url params.
+#     quiz = get_object_or_404(Quiz, pk=quiz_pk, owner=request.user)
+#     question = get_object_or_404(Question, pk=question_pk, quiz=quiz)
+#
+#     AnswerFormSet = inlineformset_factory(
+#         Question,  # parent model
+#         Answer,  # base model
+#         formset=BaseAnswerInlineFormSet,
+#         fields=('text', 'is_correct'),
+#         min_num=2,
+#         validate_min=True,
+#         max_num=10,
+#         validate_max=True
+#     )
+#
+#     if request.method == 'POST':
+#         form = QuestionForm(request.POST, instance=question)
+#         formset = AnswerFormSet(request.POST, instance=question)
+#         if form.is_valid() and formset.is_valid():
+#             with transaction.atomic():
+#                 form.save()
+#                 formset.save()
+#             messages.success(request, 'Question and answers saved with success!')
+#             return redirect('teachers:quiz_change', quiz.pk)
+#     else:
+#         form = QuestionForm(instance=question)
+#         formset = AnswerFormSet(instance=question)
+#
+#     return render(request, 'classroom/teachers/question_change_form.html', {
+#         'quiz': quiz,
+#         'question': question,
+#         'form': form,
+#         'formset': formset
+#     })
 
 
 @method_decorator([login_required, teacher_required], name='dispatch')
