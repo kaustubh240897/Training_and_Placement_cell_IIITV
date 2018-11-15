@@ -1,1 +1,1 @@
-# Trainning and Placement cell website of IIITV
+# Training and Placement cell website of IIITV
