@@ -112,7 +112,7 @@ class Job(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
     organization = models.ForeignKey(OrganizationalDetails, on_delete = models.CASCADE, blank=True, null=True, related_name='Job')
     date_of_posting = models.DateField(default=datetime.date.today)
-    offer = models.CharField(choices=OFFER, default=1, max_length=50)
+    offer = models.CharField(choices=OFFER, default=3, max_length=50)
     primary_profile = models.CharField(max_length= 255)
     location = models.CharField(max_length= 255)
     no_of_position = models.IntegerField()
